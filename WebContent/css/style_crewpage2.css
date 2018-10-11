@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+ol,ul{list-style:none;}
+a{outline:0; text-decoration: none;}
+img{border: 0;}
+*{margin:0;
+	padding:0;
+	font-family:"Nanum+Gothic",sans-serif;
+}
+/* 탑 이미지 폰트 */
+.info_crew {
+    position: absolute;
+    top: 255px;
+    left: 50%;
+    margin-left: -470px;
+    font-family: 'Kakao Light','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움',dotum,sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+.screen_out {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+.txt_name {
+    display: block;
+    padding-top: 3px;
+    margin-left: -3px;
+    font-family: 'Kakao Regular',sans-serif;
+    font-size: 50px;
+}
+/* 본문 */
+.wrap_view {
+    width: 940px;
+    margin: 0 auto;
+}
+.wrap_subject {
+    width: 100%;
+    padding: 63px 0;
+    color: #1e1e1e;
+}
+.wrap_subject .tit_subject {
+    float: left;
+    width: 240px;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.wrap_subject .cont_subject {
+    overflow: hidden;
+    font-size: 15px;
+    font-family: 'Kakao Light','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움',dotum,sans-serif;
+}
+.wrap_subject .emph_subject {
+    font-weight: normal;
+    font-size: 30px;
+}
+.wrap_subject .list_question li {
+    padding-top: 29px;
+}
+.wrap_subject .desc_answer {
+    padding-top: 4px;
+    line-height: 30px;
+    color: #333;
+}
+/* 본문 끝 */
+.topimage{
+	height:720px;
+	background: url("../img/minha1.jpg") no-repeat;
+	background-size:100% 720px;
+}
+.botimage{
+	height:720px;
+	background: url("../img/minha2.jpg") no-repeat;
+	background-size:100% 720px;
+	
+}
