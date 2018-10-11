@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+ol,ul{list-style:none;}
+a{outline:0; text-decoration: none;}
+img{border: 0;}
+*{margin:0;
+	padding:0;
+	font-family:"Nanum+Gothic",sans-serif;
+}
+/* 기본설정 */
+section{
+	width: 70%;
+	margin:0 auto;
+	position : relative;
+}
+.tit01{
+	border-bottom: 1px solid #ddd;
+}
+.tit01>h1{
+	padding: 20px 20px 20px 30px;
+}
+.mainbody{
+	margin-top : 50px;
+}
+article{
+	margin : 30px 50px 30px 30px;
+	position : relative;
+	width : 25%;
+	float : left;
+	text-align: center;
+	box-sizing: border-box;
+}
+.wrapimg{
+	position : absolute;
+	left : 0;
+	right : 0;
+	top : 15%;
+	width : 150px;
+	height : 150px;
+	margin : 0 auto;
+}
+.crewimg{
+	transition : width 0.5s, height 0.5s;
+	width : 128px;
+	height : 128px;
+	display: inline-block;
+	margin: 0 auto;
+}
+.crewimg img{
+	height: 100%; 
+	width: 100%; 
+	object-fit: contain;
+}
+article:hover div .crewimg{
+	width : 150px;
+	height : 150px;
+}
+h3{
+	font-size : 50px;
+	padding-top:50px;
+}
+.infobox{
+	padding-top : 150px;
+	padding : 20px;
+	margin-top : 150px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+}
+.infobox p{
+	line-height: 20px;
+}
+.floatclaer{
+	position: relative;
+	clear:both;
+	margin-bottom: 500px;
+}
+/* 상하단 이미지 */
+.topimage{
+	width : 100%;
+	height : 600px;
+	background-image: url("../img/crew/bg_crewmain.jpg");
+}
+.botimage{
+	margin-top : 700px;
+	height : 700px;
+	background-image: url("../img/crew/bottommain.png");
+}
+
+/* 탑 이미지 폰트 */
+.info_crew {
+    position: absolute;
+    top: 255px;
+    left: 50%;
+    margin-left: -470px;
+    font-family: 'Kakao Light','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo','돋움',dotum,sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+.screen_out {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+.txt_name {
+    display: block;
+    padding-top: 3px;
+    margin-left: -3px;
+    font-family: 'Kakao Regular',sans-serif;
+    font-size: 50px;
+}

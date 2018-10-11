@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+/* reset css */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+div {
+	display: block;
+}
+.cate01{
+	margin:0 auto;
+	width:650px;
+	height:45px;
+	padding:13px 0;
+	font-size:14px;
+}
+#cate05{
+	padding:13px 0;
+margin-left:380px;
+	
+}
+.bar{
+	padding:0 7px;
+}
+.cate01:nth-child(1){
+	border-bottom:1px solid rgba(0, 0, 0, 0.05);
+}
+#cate02{
+	margin-right:80px;
+}
+#cate03{
+	margin-right:53px;
+}
+span{
+	font-weight:bold;
+}
+
+a {
+	outline: 0;
+	text-decoration: none;
+}
+#cate04{
+	margin-left:105px;
+	display:block;
+	width:42px;
+	height:25px;
+	text-align:center;
+	border-radius:5px;
+	font-weight:bold;
+	padding-top:2px;
+	color:white;
+	background-color:#e71a0f;
+}
+/**/
+img {
+	border: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+#cate{
+	padding-top:45px;
+	width:100%;
+	height:230px;
+	
+}
+#incate{
+	margin:0 auto;
+	width:1200px;
+	height:140px;
+	border:3px solid rgba(0, 0, 0, 0.05);
+}
+a:hover{
+	color:white;
+	text-decoration:none
+	!important;
+}
+#bricks{
+	padding-bottom:60px;
+	margin:0 auto;
+	width:1200px;
+	column-width:250px;
+	column-gap:0;
+}
+	
+#bricks >figure{
+	position:relative;
+	border-radius:6px;
+	display:inline-block;
+	margin:0px;
+	margin-bottom:5px;
+	padding:5px;
+	
+}
+#bricks > figure:hover{
+	animation:scale 0.5s;
+	
+}
+#bricks > figure:hover figcaption{
+	opacity:1;
+	animation:opacity 0.5s;
+	
+}
+#bricks >figure > a> img{
+	border-radius:6px;
+	width:100%;
+}
+#bricks >figure >figcaption{
+	border-radius:6px;
+	background-color:rgba(0, 0, 0, 0.05);
+	opacity:0;
+	padding:10px;
+	margin-top:5px;
+}
+@keyframes scale{
+	0%{
+	transform:scale(0.95);
+	}
+	100%{
+	transform:scale(1.0);
+	}
+}
+@keyframes opacity{
+	0%{
+	opacity:0;
+	}
+	100%{
+	opacity:1;
+	}
+}
+
+/* 상단 이미지 */
+.topimage{
+	width : 100%;
+	height : 700px;
+	background-image: url("../img/gallery_top.jpg");
+}
+
+
+#bar {
+	position:absolute;
+	left:5px;
+	width:140px;
+	padding-top:20px;
+	margin-top: 120px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	height: 500px;
+	background: gray;
+}
+
+#bar>a>div {
+	position:relative;
+	border: 1px solid white;
+	width: 100px;
+	height: 80px;
+	margin-bottom: 30px;
+	margin-left: 19px;
+	background-size: 100px 80px;
+	opacity: 0.5;
+}
+
+#venom {
+	background-image: url("../img/m_venom.jpg");
+	
+}
+
+#bumblebee {
+	background-image: url("../img/m_bumblebee.jpg");
+}
+
+#jurassic {
+	background-image: url("../img/m_jurassic.jpg");
+}
+#dumbo{
+	background-image: url("../img/m_dumbo.jpg");
+}
+
+#bar>a>div:hover {
+	border: white;
+	animation: select 1s ;
+	opacity: 1;
+}
+
+@keyframes select{
+	0%{opacity:0.5;}
+	100%{opacity:1;}
+} 
+
+#movie_name{
+	color:white;
+	display:block;
+	margin-left:21px;
+	margin-bottom:20px;
+}
+
+.topimage>div{
+	position: absolute;
+    top: 250px;
+    left: 50%;
+    margin-left: -470px;
+    font-size: 20px;
+    color: #fff;
+}
+.topimage>div>span{
+	    display: block;
+    padding-top: 3px;
+    margin-left: -3px;
+    font-size: 50px;
+    text-shadow: 1px 1px 5px black;
+}
+
