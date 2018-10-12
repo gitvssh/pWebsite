@@ -27,10 +27,10 @@
 		
 			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
 			<div id="movie"> 
-				<a href="event1.html"><div id="m_1"><span>'시카리오: 데이 오브 솔다도' 시사회에 초대합니다.</span></div></a>
-				<a href="event2.html"><div id="m_2"><span>'마녀' 서포터즈 이벤트 1차</span></div></a>
-				<a href="event3.html"><div id="m_3"><span>'아바타' 4DX 리뷰 이벤트</span></div></a>
-				<a href="event4.html"><div id="m_4"><span>'리틀 맨하탄' 언론,배급 시사회에 초대합니다.</span></div></a>
+				<a href="event1.html"><div id="m_1"><span>'암수살인' 무료 시사회 이벤트</span></div></a>
+				<a href="event2.html"><div id="m_2"><span>마블 최초의 빌런'베놈' 리뷰 이벤트</span></div></a>
+				<a href="event3.html"><div id="m_3"><span>'협상' 무대인사 안내</span></div></a>
+				<a href="event4.html"><div id="m_4"><span>'안시성' 언론,배급 시사회에 초대합니다.</span></div></a>
 			</div>
 				
 		</div>
@@ -40,7 +40,7 @@
 			<ul>
 				<li>
 					<span><span>1</span></span>
-					<span><a href="event_confirm1.html">'마녀' 익무 단독관 시사회 당첨자입니다.</a></span>
+					<span><a href="event_confirm1.html">'암수살인' 무료 시사회 이벤트 당첨자입니다.</a></span>
 					<span>운영자 18.06.19</span>
 				</li>
 				<li>

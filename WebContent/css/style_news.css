@@ -54,7 +54,7 @@ img {border: 0;}
 	margin-top:30px;
 }
 
-#d01_label{
+#d01_label, #d02_label{
 	padding-left:25px;
 	color:black;
 	font-size: 38px;
@@ -114,15 +114,6 @@ img {border: 0;}
 	margin-bottom: 100px;
 }
 
-
-#d02_label{
-	padding-left:25px;
-	color:black;
-	font-size: 38px;
-	font-family: 'Song Myung', serif;
-	width: 500px;
-    border-bottom: 1px solid #e6e6e6;
-}
 
 #d02>ul{
 	display:table;
