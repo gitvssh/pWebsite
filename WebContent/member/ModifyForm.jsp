@@ -192,7 +192,7 @@ function checkIt(){
 	<tr>
 		<td colspan="2" align="center">
 		<input type="submit" value="수정">
-		<input type="button" value="취소" onClick="javaScript:location='Main.jsp'">
+		<input type="button" value="취소" onClick="javaScript:location='Gallery.jsp'">
 		</td>
 	</tr>
 	

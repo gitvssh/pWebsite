@@ -20,5 +20,5 @@ dto.setRegdate(new Timestamp(System.currentTimeMillis()));
 
 member.MemberDAO dao=member.MemberDAO.getInstance();//dao 객체 얻기
 dao.insertMember(dto);//dao메서드 호출
-response.sendRedirect("Main.jsp");
+response.sendRedirect("Gallery.jsp");
 %>

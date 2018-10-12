@@ -29,7 +29,7 @@ if(check==1){//삭제완료
 		<tr>
 		<td align="center">
 		<p>Good Bye 잘가요
-		<meta http-equiv="Refresh" content="3;url=Main.jsp">
+		<meta http-equiv="Refresh" content="3;url=Gallery.jsp">
 		</td>
 		</tr>
 		
