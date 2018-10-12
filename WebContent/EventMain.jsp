@@ -2,17 +2,16 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<%@ include file="Header.jsp" %>
+	<head>
+		<meta charset="UTF-8">
+		<title>무벤저스의 영화갤러리</title>
+		<link rel="stylesheet" type="text/css" href="css/style_news.css">
+		<link rel="stylesheet" type="text/css" href="css/headerfooter.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<script type="text/javascript" src="js/prefixfree.min.js"></script>
+	</head>
 	<body><!-- 시사회 페이지 -->
-<header style="position:relative">
-			<nav>
-				<ul>
-					<li><a href="EventMain.jsp">시사회/이벤트</a></li>
-					<li><a href="Gallery.jsp">영화 갤러리</a></li>
-					<li><a href="crewlist.html">팀 소개</a></li>
-				</ul>
-			</nav>
-		</header>
+<%@ include file="Header.jsp" %>
 
 	<div id="container">
 	
