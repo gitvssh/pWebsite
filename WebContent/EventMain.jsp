@@ -2,14 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>무벤저스의 영화갤러리</title>
-		<link rel="stylesheet" type="text/css" href="css/style_news.css">
-		<link rel="stylesheet" type="text/css" href="css/headerfooter.css">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<script type="text/javascript" src="js/prefixfree.min.js"></script>
-	</head>
+<%@ include file="Header.jsp" %>
 	<body><!-- 시사회 페이지 -->
 <header style="position:relative">
 			<nav>
@@ -77,20 +70,7 @@
 		
 	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<!-- 푸터 -->
-<footer class="inner_footer">
-	<div class="footer_info">
-		<small class="txt_copyright">Copyright © <a href="http://localhost:8181/webpage/index03.html">Team Movengers</a> All rights reserved.</small>
-	</div>
-</footer>
+
+<%@ include file="Footer.jsp" %>
 </body>
 </html>
