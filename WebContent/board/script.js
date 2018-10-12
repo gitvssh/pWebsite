@@ -2,7 +2,7 @@ function writeSave(){
  //script.js		   
 	if($("#writer").val()==''){
 	   alert("이름을 입력 하시요 ");
-	   $("#writer").focus();
+	   $("#writser").focus();
 	   return false;
    }
    if($("#subject").val()==''){
@@ -19,4 +19,13 @@ function writeSave(){
    return true;
    }//writeSave() end
 	 
-
+function Search(){
+	if($("#KeyWord").val()==''){
+		alert("검색어를 입력하시오");
+		$("#KeyWord").focus();
+	
+		return false;
+	}
+	return true;
+	
+}

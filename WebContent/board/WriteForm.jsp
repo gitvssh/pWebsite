@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import="boardmysql.*" %>
 
 <%
 request.setCharacterEncoding("utf-8");
 
-String id=request.getParameter("Mem_id");
+boardmysql.BoardDAO dao=boardmysql.BoardDAO.getDao();
 
 
 
@@ -50,7 +51,7 @@ if(request.getParameter("num") != null){
 			<tr>
 				<td width="100">회원아이디</td>
 				<td width="350">
-				<%=session.getAttribute(id) %>
+				<input type="text" name="id" id="id" size="40">
 				</td>
 			</tr>
 			
@@ -94,9 +95,6 @@ if(request.getParameter("num") != null){
 					<input type="button" value="글목록" onclick="window.location='List.jsp'">
 				</td>
 			</tr>
-				
-				
-				
 				
 			
 			</table>

@@ -1,17 +1,20 @@
 package boardmysql;
 
-import java.util.Date;
+import java.sql.Timestamp;
+
+
+
 
 public class BoardDTO {
 
 	
 	private int num;
-	private String mem_id;
+	private String id;
 	private String email;
 	
 	private String subject;
 	private String passwd;
-	private Date regdate;
+	private Timestamp regdate;
 	private int readcount;
 	
 	private int ref; //±Û ±×·ì
@@ -25,6 +28,14 @@ public class BoardDTO {
 	
 	public BoardDTO(){}
 
+	public Timestamp getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Timestamp regdate) {
+		this.regdate = regdate;
+	}
+
 	public int getNum() {
 		return num;
 	}
@@ -33,12 +44,12 @@ public class BoardDTO {
 		this.num = num;
 	}
 
-	public String getMem_id() {
-		return mem_id;
+	public String getId() {
+		return id;
 	}
 
-	public void setMem_id(String mem_id) {
-		this.mem_id = mem_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -65,14 +76,7 @@ public class BoardDTO {
 		this.passwd = passwd;
 	}
 
-	public Date getRegdate() {
-		return regdate;
-	}
-
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
-
+	
 	public int getReadcount() {
 		return readcount;
 	}
