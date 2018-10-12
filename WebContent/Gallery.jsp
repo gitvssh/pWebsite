@@ -12,15 +12,7 @@
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-	<header>
-			<nav>
-				<ul>
-					<li><a href="EventMain.jsp">시사회/이벤트</a></li>
-					<li><a href="Gallery.jsp">영화 갤러리</a></li>
-					<li><a href="crewlist.html">팀 소개</a></li>
-				</ul>
-			</nav>
-		</header>
+<%@ include file="Header.jsp" %>
 		<!-- 상단 이미지삽입 -->
 		<div class="topimage">
 		<div>
@@ -147,10 +139,6 @@
  </figcaption>
  </figure>
  </div>
- <footer class="inner_footer">
-	<div class="footer_info">
-		<small class="txt_copyright">Copyright © <a href="http://localhost:8181/webpage/index03.html">Team Movengers</a> All rights reserved.</small>
-	</div>
-</footer>
+<%@ include file="Footer.jsp" %>
 </body>
 </html>
