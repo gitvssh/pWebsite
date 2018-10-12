@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%--영화 정보 페이지, gallery에서 영화정보 클릭하면 영화정보DB number값 가져와서,
+영화DB에서 해당자료정보 가져와서 정보 표시함
+리뷰에서도 영화DB number에 맞는 리뷰정보 가져와서 표시해줌  --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +16,7 @@
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-<header>
-			<nav>
-				<ul>
-					<li><a href="index02.html">시사회/이벤트</a></li>
-					<li><a href="index03.html">영화 갤러리</a></li>
-					<li><a href="crewlist.html">팀 소개</a></li>
-				</ul>
-			</nav>
-		</header>
+<%@ include file="Header.jsp" %>
 <div id="page">
 <div id="title">
 영화상세
@@ -79,10 +77,6 @@ The Accidental Detective 2: In Action<br>
 </div>
 </div>
 </div>
- <footer class="inner_footer">
-	<div class="footer_info">
-		<small class="txt_copyright">Copyright © <a href="http://localhost:8181/webpage/index03.html">Team Movengers</a> All rights reserved.</small>
-	</div>
-</footer>
+<%@ include file="Footer.jsp" %>
 </body>
 </html>
