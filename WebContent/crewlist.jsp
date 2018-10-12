@@ -10,6 +10,7 @@
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
 <script type="text/javascript" src="js/prefixfree.min.js"></script>
+
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
