@@ -8,6 +8,8 @@ import javax.naming.*;//lookup
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 
+import tools.Sha256;
+
 //DAO 비지니스 로직
 public class MemberDAO {
 	
@@ -80,7 +82,8 @@ public class MemberDAO {
 			 
 			 //?값채우기
 			 pstmt.setString(1, dto.getId());
-			 pstmt.setString(2, dto.getPasswd());
+			 pstmt.setString(2, Sha256.encrypt(dto.getPasswd()));
+
 			 pstmt.setString(3, dto.getName());
 			 pstmt.setString(4, dto.getJumin1());
 			 pstmt.setString(5, dto.getJumin2());
@@ -166,7 +169,7 @@ public class MemberDAO {
 				 dto=new MemberDTO();
 				 
 				 dto.setId(rs.getString("id"));
-				 dto.setPasswd(rs.getString("passwd"));
+				 dto.setPasswd(Sha256.encrypt(rs.getString("passwd")));
 				 dto.setName(rs.getString("name"));
 				 
 				 dto.setJumin1(rs.getString("jumin1"));
@@ -210,7 +213,7 @@ public class MemberDAO {
 			 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
 			 
 			 //?값 채우기
-			 pstmt.setString(1, dto.getPasswd());
+			 pstmt.setString(1, Sha256.encrypt(dto.getPasswd()));
 			 pstmt.setString(2, dto.getName());
 			 pstmt.setString(3, dto.getEmail());
 			 pstmt.setString(4, dto.getZipcode());

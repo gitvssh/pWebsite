@@ -1,12 +1,14 @@
+<%@page import="tools.Sha256"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="member.*"%>
+ <%@ page import="tools.*" %>
 <%--deletePro.jsp--%>
 
 <%
 request.setCharacterEncoding("utf-8");
 String id=(String)session.getAttribute("memId");
-String passwd=request.getParameter("passwd");
+String passwd=Sha256.encrypt(request.getParameter("passwd"));
 
 MemberDAO dao=MemberDAO.getInstance();//dao객체 얻기
 int check=dao.deleteMember(id, passwd);//dao메서드 호출

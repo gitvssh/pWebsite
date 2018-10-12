@@ -8,7 +8,7 @@
     <%
     request.setCharacterEncoding("utf-8");
     String id=request.getParameter("id");
-    String passwd=request.getParameter("passwd");
+    String passwd=Sha256.encrypt(request.getParameter("passwd"));
     
     member.MemberDAO dao=member.MemberDAO.getInstance();//dao객체 얻기
     int check=dao.userCheck(id,passwd);//dao메서드 호출
