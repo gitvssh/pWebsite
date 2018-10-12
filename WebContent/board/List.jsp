@@ -6,9 +6,29 @@
 request.setCharacterEncoding("utf-8"); //한글 변환
 %>
 
-<%
+<%!
 int pageSize=10;
 SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+%>
+
+<%
+String pageNum=request.getParameter("pageNum");
+if(pageNum==null){pageNum="1";};//넘어온 페이지넘버 값이 없으면 1페이지로
+int currentPage=Integer.parseInt(pageNum); //현재페이지
+
+int startRow=(currentPage-1)*pageSize+1;//시작페이지
+
+int endRow=currentPage*pageSize;//미지막 페이지
+
+int count=0; //글 갯수
+int number=0;//글 번호
+
+/* List list=null;
+
+BoardDAO dao=BoardDAO.getDao(); */
+/* count=dao.getCount(); */
+
+
 %>
 
 
@@ -22,7 +42,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
    <tr>
       <td align="right">
-         <a href="writeForm.jsp"><h3>새글쓰기</h3></a>
+         <a href="WriteForm.jsp"><h3>새글쓰기</h3></a>
       </td>
    </tr>
 
