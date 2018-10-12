@@ -1,0 +1,156 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>무벤져스의 영화갤러리</title>
+<link rel="stylesheet" type="text/css" href="css/style03.css" />
+<link rel="stylesheet" type="text/css" href="css/headerfooter.css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<header>
+			<nav>
+				<ul>
+					<li><a href="EventMain.jsp">시사회/이벤트</a></li>
+					<li><a href="Gallery.jsp">영화 갤러리</a></li>
+					<li><a href="crewlist.html">팀 소개</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- 상단 이미지삽입 -->
+		<div class="topimage">
+		<div>
+		<span class="t01">보고싶은 영화의 정보를</span>
+		<span class="t01">마음껏 볼 수 있는</span>
+		<span class="t01">영화갤러리 입니다.</span>
+		</div>
+		</div>
+		<div id="cate">
+		<div id="incate">
+		<ul>
+		
+		<li class="cate01"><span id="cate02">장르</span> <a href="#" style="color:black">전체</a><span class="bar">|</span><a href="#" style="color:black">액션/SF</a><span class="bar">|</span><a href="#" style="color:black">멜로/드라마</a><span class="bar">|</span><a href="#" style="color:black">코미디</a><span class="bar">|</span><a href="#" style="color:black">공포/스릴러</a><span class="bar">|</span><a href="#" style="color:black">애니메이션</a><span class="bar">|</span><a href="#" style="color:black">기타</a></li>
+		<li class="cate01"><span id="cate03">개봉기간</span> <a href="#" style="color:black">1개월</a><span class="bar">|</span><a href="#" style="color:black">2개월</a><span class="bar">|</span><a href="#" style="color:black">3개월</a><span class="bar">|</span><a href="#" style="color:black">6개월</a><span class="bar">|</span><a href="#" style="color:black">1년</a></li>
+		<li class="cate01"><a href="#" style="color:white" id="cate04"><div>조회</div></a></li>
+		</ul>
+		</div>
+		</div>
+ <div id="bricks">
+ 	<div class = "main"> 
+				<div id="bar">
+ 				<span id="movie_name"><화제의 예고편></span>
+					<a href="main1.html"><div id="venom"></div></a>
+					<a href="main2.html"><div id="bumblebee"></div></a>
+					<a href="main3.html"><div id="jurassic"></div></a>
+					<a href="main4.html"><div id="dumbo"></div></a>
+				</div>
+			</div>
+ 
+  <figure>
+ <a href="#"><img alt="어벤저스3" src="img/avengers.jpg"></a>
+ <figcaption>Avengers: Infinity War<br>
+ <img alt="5점" src="img/5star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="infojurassic.html"><img alt="쥬라기월드2" src="img/jurassic2.jpg"></a>
+ <figcaption>Jurassic World: Fallen Kingdom<br>
+ <img alt="3점" src="img/3star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="infodetective.html"><img alt="탐정" src="img/detective2.jpg"></a>
+ <figcaption>The Accidental Detective 2: In Action<br>
+ <img alt="3.5점" src="img/35star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="infooceans.html"><img alt="오션스8" src="img/oceans3.jpg"></a>
+ <figcaption>Ocean's 8<br>
+ <img alt="3.5점" src="img/35star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="독전" src="img/believe2.jpg"></a>
+ <figcaption>believer<br>
+ <img alt="4점" src="img/4star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="아이필프리티" src="img/pretty.jpg"></a>
+ <figcaption>I Feel Pretty<br>
+ <img alt="3.5점" src="img/35star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="유전" src="img/hereditary2.jpg"></a>
+ <figcaption>Hereditary<br>
+ <img alt="4.5점" src="img/45star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="데드풀2" src="img/deadpool2.jpg"></a>
+ <figcaption>Deadpool2<br>
+ <img alt="4.5점" src="img/45star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="바르다가 사랑한 얼굴들" src="img/faces2.jpg"></a>
+ <figcaption>Visages, Villages, Faces Places<br>
+ <img alt="4점" src="img/4star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="피터 래빗" src="img/rabbit2.jpg"></a>
+ <figcaption>Peter Rabbit<br>
+ <img alt="3점" src="img/3star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="류이치 사카모토: 코다" src="img/coda.jpg"></a>
+ <figcaption>Ryuichi Sakamoto: Coda<br>
+ <img alt="4점" src="img/4star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="버닝" src="img/burning3.jpg"></a>
+ <figcaption>BURNING<br>
+ <img alt="3.5점" src="img/35star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="밤쉘" src="img/shell3.jpg"></a>
+ <figcaption>Bombshell: The Hedy Lamarr Story<br>
+ <img alt="4점" src="img/4star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="부르고뉴, 와인에서 찾은 인생" src="img/life2.jpg"></a>
+ <figcaption>Ce qui nous lie , Back to Burgundy<br>
+ <img alt="4.5점" src="img/45star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="세라비, 이것이 인생!" src="img/lavie2.jpg"></a>
+ <figcaption>C'est la vie!<br>
+ <img alt="5점" src="img/5star.png"><br>
+ </figcaption>
+ </figure>
+  <figure>
+ <a href="#"><img alt="라멜로디" src="img/melody2.jpg"></a>
+ <figcaption>La melodie , Orchestra Class<br>
+ <img alt="4점" src="img/4star.png"><br>
+ </figcaption>
+ </figure>
+ </div>
+ <footer class="inner_footer">
+	<div class="footer_info">
+		<small class="txt_copyright">Copyright © <a href="http://localhost:8181/webpage/index03.html">Team Movengers</a> All rights reserved.</small>
+	</div>
+</footer>
+</body>
+</html>
