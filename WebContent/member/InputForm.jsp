@@ -183,10 +183,10 @@ function confirmIDCheck(){
 <input type="submit" value="회원가입">
 <input type="reset" value="디시입력">
 
-<input type="button" value="가입안함" onclick="javascript:window.location='Gallery.jsp'">
-<input type="button" value="가입안함" onclick="javascript:location='Gallery.jsp'">
-<input type="button" value="가입안함" onclick="window.location='Gallery.jsp'">
-<input type="button" value="가입안함" onclick="location='Gallery.jsp'">
+<input type="button" value="가입안함" onclick="javascript:window.location='../Gallery.jsp'">
+<input type="button" value="가입안함" onclick="javascript:location='../Gallery.jsp'">
+<input type="button" value="가입안함" onclick="window.location='../Gallery.jsp'">
+<input type="button" value="가입안함" onclick="location='../Gallery.jsp'">
 </td>
 </tr>
 

@@ -32,10 +32,10 @@ dao.updateMember(dto);//dao메서드 호출
 	<tr>
 	<td align="center">
 		<form>
-		<input type="button" value="메인으로" onClick="window.location='Gallery.jsp'">
+		<input type="button" value="메인으로" onClick="window.location='../Gallery.jsp'">
 		</form>
 		3초 후에 메인으로 이동 합니다
-		<meta http-equiv="Refresh" content="3;url=Gallery.jsp">
+		<meta http-equiv="Refresh" content="3;url=../Gallery.jsp">
 	</td>
 	</tr>
 

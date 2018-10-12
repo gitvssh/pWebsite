@@ -4,5 +4,5 @@
 
 <%
 session.invalidate();//
-response.sendRedirect("Gallery.jsp");
+response.sendRedirect("../Gallery.jsp");
 %>
