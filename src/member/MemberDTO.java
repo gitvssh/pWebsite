@@ -17,6 +17,14 @@ public class MemberDTO {
 	private String addr;
 	private String job;
 	private Timestamp regdate;
+	private int point;
+	
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
 	public String getId() {
 		return id;
 	}

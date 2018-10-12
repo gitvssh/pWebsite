@@ -76,7 +76,7 @@ public class MemberDAO {
 		 
 		 try{
 			 con=getCon();//커넥션 얻는다
-			 pstmt=con.prepareStatement("insert into member values(?,?,?,?,?,?,?,?,?,?)");
+			 pstmt=con.prepareStatement("insert into member values(?,?,?,?,?,?,?,?,?,?,?)");
 			 
 			 //?값채우기
 			 pstmt.setString(1, dto.getId());
@@ -90,6 +90,7 @@ public class MemberDAO {
 			 pstmt.setString(8, dto.getAddr());
 			 pstmt.setString(9, dto.getJob());
 			 pstmt.setTimestamp(10, dto.getRegdate());
+			 pstmt.setInt(11, dto.getPoint());
 			 
 			 pstmt.executeUpdate();//쿼리수행*****
 			 

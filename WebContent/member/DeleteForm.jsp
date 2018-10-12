@@ -43,7 +43,7 @@
 	<tr height="30">
 	<td colspan=2 align="center" valign="middle">
 	<input type="submit" value="회원탈퇴">
-	<input type="reset" value="취소" onClick="window.location='Main.jsp'">
+	<input type="reset" value="취소" onClick="window.location='../Gallery.jsp'">
 	</td>
 	</tr>
 

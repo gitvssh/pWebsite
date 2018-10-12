@@ -18,7 +18,7 @@ if(check==1){//삭제완료
 	session.invalidate();//세션 무효화
 %>
 	<body>
-	<form name="userForm" method="post" action="Main.jsp">
+	<form name="userForm" method="post" action="../Gallery.jsp">
 	<table width="270" cellpadding="5" align="center">
 		<tr>
 		<td height="40" align="center">
@@ -29,7 +29,7 @@ if(check==1){//삭제완료
 		<tr>
 		<td align="center">
 		<p>Good Bye 잘가요
-		<meta http-equiv="Refresh" content="3;url=Main.jsp">
+		<meta http-equiv="Refresh" content="3;url=../Gallery.jsp">
 		</td>
 		</tr>
 		

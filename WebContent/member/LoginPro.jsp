@@ -15,7 +15,7 @@
     
     if(check==1){//로그인 정상
     	session.setAttribute("memId", id);
-    	response.sendRedirect("Main.jsp");
+    	response.sendRedirect("../Gallery.jsp");
     }else if(check==0){//비밀번호가 다를때
     %>	
     	<script>
