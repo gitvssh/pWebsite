@@ -12,7 +12,7 @@
 request.setCharacterEncoding("utf-8");
 %>
 
-<%
+<%!
 int nowPage=0;//현재 페이지
 int nowBlock=0;// 현재 블럭
 
@@ -50,7 +50,7 @@ if(request.getParameter("reload")!=null){
 
 <%!
 
-SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 %>
 <%
@@ -143,6 +143,7 @@ function list(){
 </script>
 </head>
 <body >
+
 <center><b><h1>자유게시판</h1></b></center>
 <table width="700" align="center">
 
@@ -171,7 +172,7 @@ if(totalRecord==0){//글이 없으면
    <table width="700" border="1" cellpadding="3" align="center">
    
       <tr>
-         <td align="center" width="50">번호</td>
+         <td align="center" width="50">글번호</td>
          <td align="center" width="200">제목 </td>
          <td align="center" width="100">작성자</td>
          <td align="center" width="200">작성일</td>
@@ -206,7 +207,7 @@ if(totalRecord==0){//글이 없으면
          %>
          
          <%--글제목 --%>
-         <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=nowPage %>">
+         <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
            <%=dto.getSubject() %>
          </a>
          <%
