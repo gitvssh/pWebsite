@@ -16,7 +16,7 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
-	<div id="List">
+	<div class="List">
 <%
 String flag=request.getParameter("flag");
 if(flag==null){

@@ -144,16 +144,7 @@ function list(){
 </head>
 <body >
 
-<center><b><h1>자유게시판</h1></b></center>
-<table width="700" align="center">
-
-   <tr>
-      <td align="right" >
-         <a href="WriteForm.jsp"><h3>새글쓰기</h3></a>
-      </td>
-   </tr>
-
-</table>
+<center><b><h1 id="free">자유게시판</h1></b></center>
 
 <%
 if(totalRecord==0){//글이 없으면
@@ -169,9 +160,9 @@ if(totalRecord==0){//글이 없으면
 <%
 }else{//글이 있으면
 %>
-   <table width="700" border="1" cellpadding="3" align="center">
+   <table width="700" border="1" cellpadding="3" align="center" class="tb">
    
-      <tr>
+      <tr class="t1">
          <td align="center" width="50">글번호</td>
          <td align="center" width="200">제목 </td>
          <td align="center" width="100">작성자</td>
@@ -210,13 +201,7 @@ if(totalRecord==0){//글이 없으면
          <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
            <%=dto.getSubject() %>
          </a>
-         <%
-         if(dto.getReadcount()>20){//조회수가 20번 이상이면 hot.gif 표시
-         %>
-         <img src="../imgs/hot.gif" height="10" border="0">
-         <%   
-         }//조회수 hot.gif
-         %>
+         
          </td>
          
          <%--글쓴이 --%>
@@ -242,7 +227,7 @@ if(totalRecord==0){//글이 없으면
 	<%
 if(totalPage>0){
 %>
-<table border="1" width="700" align="center">
+<table border="1" width="700" align="center" class="tb">
    <tr>
       <td align="center">
          <%
@@ -300,7 +285,7 @@ if(totalPage>0){
 </table>
 
 <form name="searchForm" method="post" action="List.jsp">
-	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0>
+	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0 class="tb">
 	<tr>
 		<td align=center valign=bottom>
 			<select name="keyField">
@@ -308,12 +293,18 @@ if(totalPage>0){
 				<option value="id">이름</option>
 				<option value="content">글내용</option>
 			</select>
-			
+		
 			<input type="text" name="keyWord" size=16>
 			<input type="hidden" name="page" value="0">
 			<input type="button" value="찾기" onClick="check()">
-			<a href="javascript:list()">[리스트 처음으로]</a>
+			&nbsp;&nbsp;
+			
+			<a href="javascript:list()" >[리스트 처음으로]</a>
+			 &nbsp;&nbsp;<a href="WriteForm.jsp" ><b>새글쓰기</b></a>
+			
 		</td>
+			
+			
 		</tr>
 	
 	

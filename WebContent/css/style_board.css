@@ -3,5 +3,28 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 * {	margin: 0;padding: 0;font-family: 'NanumGothic', sans-serif;}
 .List{
-	margin-bottom: 200px;
+	width:80%;
+	margin: 0 auto;
+	margin-bottom:50px;
+	
+}
+.tb{
+	width:100%;
+	text-align: center;
+	
+	border: 0;
+}
+#free{
+	margin-bottom: 20px;
+}
+.t1{
+	
+	background: #86E57F;
+}
+.a1{
+	margin-left: 50px;
+}
+.List>a{
+	color:#000;
+	
 }
