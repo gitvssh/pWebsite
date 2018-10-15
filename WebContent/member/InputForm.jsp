@@ -5,6 +5,7 @@
  
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -83,42 +84,41 @@ function confirmIDCheck(){
 </script>
 </head>
 <body>
-<form method="post" name="userForm" action="InputPro.jsp" onSubmit="return check()">
-<table width="650" border="1" cellpadding="3">
-<tr height="70">
+<form method="post" name="userForm" action="InputPro.jsp" onSubmit="return check()" >
+
+<table width="700" cellpadding="3" align="center"  class="table" >
+
+<tr>
 <td colspan="2" height="30" align="center">
-<b>(^.^)회원가입(^.^)</b>
+<b>회원가입</b>
 </td>
 </tr>
 
-<tr height="70">
-<td width="120"><b>아이디</b></td>
-<td></td>
-</tr>
 
-<tr height="70">
+<tr>
 <td>사용자ID</td>
 <td>
-<input type="text" name="id" id="id" size="10">
-<input type="button" value="ID중복체크" onClick="confirmIDCheck()">
+
+<input type="text" name="id" id="id" size="15" >
+<input type="button" value="ID중복체크" onClick="confirmIDCheck()" class="btn">
 </td>
 </tr>
 
-<tr height="70">
+<tr >
 <td>비밀번호</td>
 <td>
 <input type="password" name="passwd" id="passwd" size="15">
 </td>
 </tr>
 
-<tr height="70">
+<tr>
 <td>비밀번호 확인</td>
 <td>
 <input type="password" name="passwd2" id="passwd2" size="15">
 </td>
 </tr>
 
-<tr height="70">
+<tr>
 <td><b>개인정보 입력</b></td>
 <td>&nbsp;</td>
 </tr>
@@ -150,7 +150,7 @@ function confirmIDCheck(){
 <td>우편번호</td>
 <td>
 <input type="text" name="zipcode" id="zipcode" size=7>
-<input type="button" value="우편번호찾기" onclick="openDaumPostcode()">
+<input type="button" value="우편번호찾기" onclick="openDaumPostcode()" class="btn">
 </td>
 </tr>
 
@@ -180,10 +180,10 @@ function confirmIDCheck(){
 
 <tr>
 <td colspan="2" align="center">
-<input type="submit" value="회원가입">
-<input type="reset" value="디시입력">
+<input type="submit" value="회원가입" class="btn2">
+<input type="reset" value="다시입력" class="btn3">
 
-<input type="button" value="가입취소" onclick="javascript:window.location='../Gallery.jsp'">
+<input type="button" value="가입취소" onclick="javascript:window.location='../Gallery.jsp'" class="btn3">
 
 </td>
 </tr>
