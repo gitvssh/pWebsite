@@ -85,18 +85,18 @@ function confirmIDCheck(){
 <body>
 <form method="post" name="userForm" action="InputPro.jsp" onSubmit="return check()">
 <table width="650" border="1" cellpadding="3">
-<tr>
+<tr height="70">
 <td colspan="2" height="30" align="center">
 <b>(^.^)회원가입(^.^)</b>
 </td>
 </tr>
 
-<tr>
+<tr height="70">
 <td width="120"><b>아이디</b></td>
 <td></td>
 </tr>
 
-<tr>
+<tr height="70">
 <td>사용자ID</td>
 <td>
 <input type="text" name="id" id="id" size="10">
@@ -104,21 +104,21 @@ function confirmIDCheck(){
 </td>
 </tr>
 
-<tr>
+<tr height="70">
 <td>비밀번호</td>
 <td>
 <input type="password" name="passwd" id="passwd" size="15">
 </td>
 </tr>
 
-<tr>
+<tr height="70">
 <td>비밀번호 확인</td>
 <td>
 <input type="password" name="passwd2" id="passwd2" size="15">
 </td>
 </tr>
 
-<tr>
+<tr height="70">
 <td><b>개인정보 입력</b></td>
 <td>&nbsp;</td>
 </tr>

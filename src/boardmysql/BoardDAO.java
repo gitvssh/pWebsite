@@ -131,7 +131,7 @@ public class BoardDAO {
 	
 	
 	// 리스트
-	public List getList(int start, int cnt) throws Exception{
+/*	public List getList(int start, int cnt) throws Exception{
 		List<BoardDTO> list = null; // 변수
 		
 		Connection con = null;
@@ -190,7 +190,7 @@ public class BoardDAO {
 		
 		return list;
 		
-	} // getList end
+	} // getList end*/
 	 public BoardDTO getArticle(int num) throws Exception{
 	      BoardDTO dto = null;
 	      Connection con = null;
@@ -403,10 +403,10 @@ public class BoardDAO {
 			   
 			   if(keyWord.equals(null) || keyWord.equals("")){
 					//전체글
-					sql="select * from board";
+					sql="select * from board order by ref desc";
 				}else{//검색한 글
 					sql="select * from board where "+
-							keyField+" like '%"+keyWord+"%'";
+							keyField+" like '%"+keyWord+"%'"+" order by ref desc";
 							
 				}//else 
 			   rs=stmt.executeQuery(sql);
@@ -418,7 +418,6 @@ public class BoardDAO {
 		            dto.setId(rs.getString("id"));
 		            dto.setEmail(rs.getString("email"));
 		            dto.setSubject(rs.getString("subject"));
-		            
 		            
 		            dto.setRegdate(rs.getTimestamp("regdate"));
 		            dto.setReadcount(rs.getInt("readcount"));
@@ -432,6 +431,7 @@ public class BoardDAO {
 		            dto.setCategory(rs.getInt("category"));
 		            
 		            vec.add(dto);
+		         
 			   }
 		   }catch(Exception ex1){
 			   System.out.println("List 예외 :" + ex1);
