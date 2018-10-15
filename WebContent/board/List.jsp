@@ -60,6 +60,21 @@ number=count-(currentPage-1)*pageSize;//보여질 글번호
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript">
+function check(){
+	if(document.searchForm.keyWord.value==''){
+		alert("검색어를 입력하시오");
+		document.searchForm.keyWord.focus();
+		return false;
+	}
+	document.searchForm.submit(); //List.jsp로 간다
+}
+function list(){
+	document.listForm.action="List.jsp";
+	document.listForm.submit(); 
+}
+
+</script>
 </head>
 <body >
 <center><b><h1>글목록(전체글):<%=count %></h1></b></center>
@@ -91,7 +106,7 @@ if(count==0){//글이 없으면
    
       <tr>
          <td align="center" width="50">번호</td>
-         <td align="center" width="200">제목</td>
+         <td align="center" width="200">제목 </td>
          <td align="center" width="100">작성자</td>
          <td align="center" width="200">작성일</td>
          <td align="center" width="50">조회수</td>
@@ -100,6 +115,11 @@ if(count==0){//글이 없으면
    <%
    for(int i=0;i<list.size();i++){
       BoardDTO dto=(BoardDTO)list.get(i);
+      
+      if(dto.getCategory()!=0){
+    	  continue;
+      } 
+    	  
       %>
       <tr height="30">
          <td align="center"> <%=number-- %></td>
@@ -211,6 +231,25 @@ if(count>0){
       </td>
    </tr>
 </table>
+<form name="searchForm" method="post" action="List.jsp">
+	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0>
+	<tr>
+		<td align=center valign=bottom>
+			<select name="keyField">
+				<option value="subject">제목</option>
+				<option value="name">이름</option>
+				<option value="content">글내용</option>
+			</select>
+			
+			<input type="text" name="keyWord" size=16>
+			<input type="hidden" name="page" value="0">
+			<input type="button" value="찾기" onClick="check()">
+		</td>
+		</tr>
+	
+	
+	</table> 
+</form>
 <%
 }//if(count>0)
 %>

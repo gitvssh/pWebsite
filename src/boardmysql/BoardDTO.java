@@ -25,7 +25,7 @@ public class BoardDTO {
 	private String ip;
 	
 	private int category; //카테고리
-	
+	//0:자유게시판,1:Q&A게시판,2:리뷰,3:이벤트,4공지사항
 	public BoardDTO(){}
 
 	public Timestamp getRegdate() {

@@ -85,9 +85,9 @@ if(request.getParameter("num") != null){
 			 	<td> 카테고리</td>
 			 		<td>
 			 		<select name="category" id="category" >
-			 			<option>자유게시판</option>
-			 			<option>Q&A게시판</option>
-			 			<option>리뷰작성</option>
+			 			<option value="0">자유게시판</option>
+			 			<option value="1">Q&A게시판</option>
+			 			<option value="2">리뷰작성</option>
 			 			
 			 		
 			 		</select>
