@@ -9,6 +9,8 @@ import javax.naming.*;//lookup
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 
+import tools.Sha256;
+
 //DAO 비지니스 로직
 public class MemberDAO {
 	
@@ -77,11 +79,12 @@ public class MemberDAO {
 		 
 		 try{
 			 con=getCon();//커넥션 얻는다
-			 pstmt=con.prepareStatement("insert into member values(?,?,?,?,?,?,?,?,?,?,?)");
+			 pstmt=con.prepareStatement("insert into member values(?,?,?,?,?,?,?,?,?,?,?,?)");
 			 
 			 //?값채우기
 			 pstmt.setString(1, dto.getId());
-			 pstmt.setString(2, dto.getPasswd());
+			 pstmt.setString(2, Sha256.encrypt(dto.getPasswd()));
+
 			 pstmt.setString(3, dto.getName());
 			 pstmt.setString(4, dto.getJumin1());
 			 pstmt.setString(5, dto.getJumin2());
@@ -92,6 +95,7 @@ public class MemberDAO {
 			 pstmt.setString(9, dto.getJob());
 			 pstmt.setTimestamp(10, dto.getRegdate());
 			 pstmt.setInt(11, dto.getPoint());
+			 pstmt.setInt(12, 1);//level 회원가입시 무조건 1
 			 
 			 pstmt.executeUpdate();//쿼리수행*****
 			 
@@ -105,6 +109,8 @@ public class MemberDAO {
 				 
 			 }
 		 }//finally end
+		 
+		 
 	 }//insertMember() end-----------------------------------
 	 
 	 //-------------------
@@ -167,7 +173,7 @@ public class MemberDAO {
 				 dto=new MemberDTO();
 				 
 				 dto.setId(rs.getString("id"));
-				 dto.setPasswd(rs.getString("passwd"));
+				 dto.setPasswd(Sha256.encrypt(rs.getString("passwd")));
 				 dto.setName(rs.getString("name"));
 				 
 				 dto.setJumin1(rs.getString("jumin1"));
@@ -211,7 +217,7 @@ public class MemberDAO {
 			 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
 			 
 			 //?값 채우기
-			 pstmt.setString(1, dto.getPasswd());
+			 pstmt.setString(1, Sha256.encrypt(dto.getPasswd()));
 			 pstmt.setString(2, dto.getName());
 			 pstmt.setString(3, dto.getEmail());
 			 pstmt.setString(4, dto.getZipcode());
