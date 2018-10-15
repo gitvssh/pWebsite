@@ -294,10 +294,12 @@ public class MemberDAO {
 	 }//deleteMember() end-------------------------------------------
 	 
 	 
+	 
+	//=================================관리자============================================= 
 	 //------------
 	 //회원 전체목록 리스트 출력
 	 //-------------
-	 public ArrayList<MemberDTO> getMemberAll(MemberDTO dto) throws Exception{
+	 public ArrayList<MemberDTO> getMemberAll(){
 		 ArrayList<MemberDTO> list=new ArrayList<MemberDTO>();
 		 
 		 Connection con=null;
@@ -310,8 +312,9 @@ public class MemberDAO {
 			 pstmt=con.prepareStatement("select * from member");
 			 rs=pstmt.executeQuery();//쿼리실행
 			 
+			 System.out.println();
 			 if(rs.next()){
-				 dto=new MemberDTO();
+				MemberDTO dto=new MemberDTO();
 				 
 				 dto.setId(rs.getString("id"));
 				 dto.setPasswd(rs.getString("passwd"));
@@ -330,7 +333,7 @@ public class MemberDAO {
 			 }
 			 
 		 }catch(Exception ex1){
-			 System.out.println("getMemberAll 예외 : "+ex1);
+			 System.out.println("getMemberAll() 예외 : "+ex1);
 		 }finally{
 			 try{
 				 if(rs!=null){rs.close();}
@@ -344,7 +347,10 @@ public class MemberDAO {
 		 return list;
 	 }//getMemberAll() end -----------------------------
 
-	 
+	
+	
+
+
 	 
 	 
 }//class
