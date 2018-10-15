@@ -39,11 +39,13 @@ public class AdminDAO {
 	 //로그인(인증)
 	 //-------------------
 	 public int userCheck(String id,String passwd) throws Exception{
+		 
 		 Connection con=null;
 		 PreparedStatement pstmt=null;
 		 ResultSet rs=null;
 		 String dbPwd="";
 		 int x=-1;
+
 		 
 		 try{
 			 con=getCon();

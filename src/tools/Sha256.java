@@ -2,13 +2,13 @@ package tools;
 
 import java.security.MessageDigest;
 
-//암호화 클래스
+//�븫�샇�솕 �겢�옒�뒪
 public class Sha256 {
 	
 	/**
-	 * 암호화메서드, 암호입력받을때 호출해서 암호화시킴
+	 * �븫�샇�솕硫붿꽌�뱶, �븫�샇�엯�젰諛쏆쓣�븣 �샇異쒗빐�꽌 �븫�샇�솕�떆�궡
 	 * @param planText
-	 * @return 암호화된 비밀번호
+	 * @return �븫�샇�솕�맂 鍮꾨�踰덊샇
 	 */
 	public static String encrypt(String planText){
 		try{

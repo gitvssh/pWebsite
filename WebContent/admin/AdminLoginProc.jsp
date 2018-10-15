@@ -2,18 +2,19 @@
     pageEncoding="UTF-8"%>
     
     <%@ page import="admin.*" %>
+   
     <%--AdminLoginProc.jsp --%>
     
     <%
     request.setCharacterEncoding("utf-8");
     String id=request.getParameter("id");
-    String passwd=request.getParameter("passwd");
+    String passwd=request.getParameter("pwd");
     
     admin.AdminDAO dao=admin.AdminDAO.getInstance();//dao객체 얻기
     int check=dao.userCheck(id,passwd);//dao메서드 호출
     
     if(check==1){//로그인 정상
-    	session.setAttribute("memId", id);
+    	session.setAttribute("admin_id", id);
     	response.sendRedirect("../Gallery.jsp");
     }else if(check==0){//비밀번호가 다를때
     %>	

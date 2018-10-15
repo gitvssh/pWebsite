@@ -4,6 +4,7 @@
 
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
 <script type="text/javascript">
 	function begin(){
 		//페이지 실행과 동시에 포커스 설정
@@ -23,27 +24,27 @@
 
 <body onLoad="begin()">
 <form name="delForm" method="post" action="DeletePro.jsp" onSubmit="return checkIt()">
-<table border="1" cellpadding=3 width="260" align="center">
-	<tr height="30">
+<table cellpadding=3 width="500" align="center" bgcolor="#f9fafb">
+	<tr >
 		<td colspan="2" valign="middle" align="center">
 		<font size="+2"><b>회원탈퇴</b></font>
 		</td>
 	</tr>
 	
-	<tr height="30">
+	<tr>
 		<td width="110" align="center">
 		비밀번호
 		</td>
 		
 		<td width="150">
-		<input type="password" name="passwd" size="15">
+		<input type="password" name="passwd" size="15" id="passwd">
 		</td>
 	</tr>
 	
-	<tr height="30">
+	<tr>
 	<td colspan=2 align="center" valign="middle">
-	<input type="submit" value="회원탈퇴">
-	<input type="reset" value="취소" onClick="window.location='../Gallery.jsp'">
+	<input type="submit" value="회원탈퇴" class="btn2">
+	<input type="reset" value="취소" onClick="window.location='../Gallery.jsp'" class="btn3">
 	</td>
 	</tr>
 

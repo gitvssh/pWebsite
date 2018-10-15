@@ -13,14 +13,14 @@
 
 <script type="text/javascript">
 function admincheck(){
-	if($('#admn_id').val()==''){
-		alert("admin_id를 입력 하시오");
-		$('#admin_id').val().focus();
+	if($('#id').val()==''){
+		alert("관리자 아이디를 입력 하시오");
+		$('#id').val().focus();
 		return false;
 	}
-	if($('#admin_pwd').val()==''){
-		alert("admin_pwd를 입력 하시오");
-		$('#admin_pwd').val().focus();
+	if($('#pwd').val()==''){
+		alert("관리자 패스워드를 입력 하시오");
+		$('#pwd').val().focus();
 		return false;
 	}
 	document.ff.submit();      
@@ -34,20 +34,20 @@ function admincheck(){
 	<tr>
 	<td width="47%" align="center">Admin ID</td>
 	<td width="53%">
-	<input type="text" name="admin_id" id="admin_id">
+	<input type="text" name="id" id="id">
 	</td>
 	</tr>
 	
 	<tr>
 	<td align="center">Admin PWD</td>
 	<td>
-	<input type="password" name="admin_pwd" id="admin_pwd">
+	<input type="password" name="pwd" id="pwd">
 	</td>
 	</tr>
 	
 	<tr>
 	<td colspan="2" align="center">
-	<input type="button" value="Admin로그인" onclick="admincheck()">
+	<input type="button" value="관리자 로그인" onclick="admincheck()">
 	<input type="reset" value="취소">
 	</td>
 	</tr>
