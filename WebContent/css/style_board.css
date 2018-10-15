@@ -3,16 +3,17 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 * {	margin: 0;padding: 0;font-family: 'NanumGothic', sans-serif;}
 .List{
-	width:80%;
+	width:70%;
 	margin: 0 auto;
 	margin-bottom:50px;
+	
 	
 }
 .tb{
 	width:100%;
 	text-align: center;
-	
 	border: 0;
+	font-size: 15px;
 }
 #free{
 	margin-bottom: 20px;
