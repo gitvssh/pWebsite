@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="boardmysql.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.*" %>
 
 
 <%--content.jsp--%>
@@ -33,6 +34,9 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
             
             <td align="center" width="125" >조회수</td>
             <td align="center" width="125"><%=dto.getReadcount() %></td>
+               
+            
+            
          </tr>
          <tr height="30">
             <td align="center" width="125" >작성자</td>
@@ -40,6 +44,10 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
             
             <td align="center" width="125" >작성일</td>
             <td align="center" width="125"><%=sdf.format(dto.getRegdate()) %></td>
+         </tr>
+         <tr height="30">
+            <td align="center" width="125" >카테고리</td>
+            <td align="center" width="375" colspan="3"><%=dto.getCategory() %></td>
          </tr>
          <tr height="30">
             <td align="center" width="125" >글제목</td>
