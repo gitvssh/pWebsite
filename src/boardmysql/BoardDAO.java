@@ -6,6 +6,8 @@ import java.util.*;
 import javax.naming.*;
 import javax.sql.*;
 
+
+
 public class BoardDAO {
 	
 	private static BoardDAO dao= new BoardDAO();
@@ -129,7 +131,7 @@ public class BoardDAO {
 	
 	
 	// 리스트
-	public List getList(int start, int cnt) throws Exception{
+/*	public List getList(int start, int cnt) throws Exception{
 		List<BoardDTO> list = null; // 변수
 		
 		Connection con = null;
@@ -165,7 +167,7 @@ public class BoardDAO {
 					
 					dto.setContent(rs.getString("content"));
 					dto.setIp(rs.getString("ip"));
-					//dto.setCategory(rs.getInt("category"));
+					dto.setCategory(rs.getInt("category"));
 					
 					list.add(dto); // list에 넣는다
 				}while(rs.next());
@@ -188,7 +190,7 @@ public class BoardDAO {
 		
 		return list;
 		
-	} // getList end
+	} // getList end*/
 	 public BoardDTO getArticle(int num) throws Exception{
 	      BoardDTO dto = null;
 	      Connection con = null;
@@ -384,6 +386,66 @@ public class BoardDAO {
 		   return x;
 		   
 	   }//deleteArticle() end................
+	   
+	   
+	   
+	   //검색
+	   public Vector<BoardDTO> getBoardList(String keyField, String keyWord){
+		   Vector<BoardDTO> vec = new Vector<BoardDTO>();
+		   Connection con=null;
+		   Statement stmt =null;
+		   ResultSet rs=null;
+		   String sql="";
+		   
+		   try{
+			   con=getCon();
+			   stmt=con.createStatement();
+			   
+			   if(keyWord.equals(null) || keyWord.equals("")){
+					//전체글
+					sql="select * from board order by ref desc";
+				}else{//검색한 글
+					sql="select * from board where "+
+							keyField+" like '%"+keyWord+"%'"+" order by ref desc";
+							
+				}//else 
+			   rs=stmt.executeQuery(sql);
+			   
+			   while(rs.next()){
+				   BoardDTO dto= new BoardDTO();
+				   
+				    dto.setNum(rs.getInt("num"));
+		            dto.setId(rs.getString("id"));
+		            dto.setEmail(rs.getString("email"));
+		            dto.setSubject(rs.getString("subject"));
+		            
+		            dto.setRegdate(rs.getTimestamp("regdate"));
+		            dto.setReadcount(rs.getInt("readcount"));
+		            
+		            dto.setRef(rs.getInt("ref"));
+		            dto.setRe_step(rs.getInt("re_step"));
+		            dto.setRe_level(rs.getInt("re_level"));
+		            
+		            dto.setContent(rs.getString("content"));
+		            dto.setIp(rs.getString("ip"));
+		            dto.setCategory(rs.getInt("category"));
+		            
+		            vec.add(dto);
+		         
+			   }
+		   }catch(Exception ex1){
+			   System.out.println("List 예외 :" + ex1);
+		   }finally{
+			   try{
+					if(rs!=null){rs.close();}
+					if(stmt!=null){stmt.close();}
+					if(con!=null){con.close();}
+
+			   }catch (Exception ex2){}
+		   }
+		   return vec;
+	   }
+		
 
 	
 }
