@@ -14,6 +14,7 @@ MemberDTO dto=dao.getMember(id);//dao메서드 호출
 
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -74,24 +75,13 @@ function checkIt(){
 <body>
 <form name="userForm" action="ModifyPro.jsp" onSubmit="return checkIt()">
 
-<table width="600"  border="1" cellpadding="1" align="center">
+<table width="800" cellpadding="3" align="center" bgcolor="#f9fafb" class="table">
 	<tr>
 		<td colspan="2" height="30" align="center">
-		<b><font size="5">(^.^)회원정보 수정(^.^)</font></b>
+		<b><font size="5">회원정보 수정</font></b>
 		</td>
 	</tr>
-	
-	<tr>
-		<td colspan="2" align="center">
-		회원정보 수정 합니다
-		</td>
-	</tr>
-	
-	<tr>
-		<td width="200"><b>패스워드입력</b></td>
-		<td width="400">&nbsp;</td>
-	</tr>
-	
+
 	<tr>
 		<td>사용자 ID</td>
 		<td><%=dto.getId() %></td>
@@ -99,12 +89,12 @@ function checkIt(){
 
 	<tr>
 		<td>암호</td>
-		<td><input type="password" name="passwd" id="passwd" size="20">필수입력</td>
+		<td><input type="password" name="passwd" id="passwd" size="20"><b>필수입력</b></td>
 	</tr>
 	
 	<tr>
 		<td>암호확인</td>
-		<td><input type="password" name="passwd2" id="passwd2" size="20">필수입력</td>
+		<td><input type="password" name="passwd2" id="passwd2" size="20"><b>필수입력</b></td>
 	</tr>
 	
 	<tr>
@@ -144,7 +134,7 @@ function checkIt(){
 		}
 		%>
 		<input type="text" name="zipcode" id="zipcode" size="7" maxlength="7" value="<%=im %>">
-		<input type="button" value="우편번호찾기" onclick="openDaumPostcode()">
+		<input type="button" value="우편번호찾기" onclick="openDaumPostcode()" class="btn">
 		</td>
 	</tr>
 	
@@ -171,7 +161,7 @@ function checkIt(){
 		}
 		%>
 		
-		<select name="job">
+		<select name="job" id="job">
 		<%
 		if(im==""){
 			out.println("<option value='0'>선택하시오</option>");
@@ -192,8 +182,8 @@ function checkIt(){
 	
 	<tr>
 		<td colspan="2" align="center">
-		<input type="submit" value="수정">
-		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'">
+		<input type="submit" value="수정" class="btn2">
+		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'" class="btn3">
 		</td>
 	</tr>
 	
