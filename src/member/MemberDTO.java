@@ -17,8 +17,16 @@ public class MemberDTO {
 	private String addr;
 	private String job;
 	private Timestamp regdate;
-	private int point;
 	
+	private int point;
+	private int level;
+	
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
 	public int getPoint() {
 		return point;
 	}
