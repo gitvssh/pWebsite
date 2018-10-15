@@ -36,8 +36,10 @@ function admin_modify_member(id){
 
 <table style="width:80%">
 		<tr style="background-color: cyan">
-			<th>아이디</th><th>회원명</th><th>이메일</th><th>전화</th><th>수정</th>
+			<th>아이디</th><th>회원명</th><th>이메일</th><th>직업</th><th>포인트</th><th>레벨</th><th>수정</th>
 		</tr>
+		
+		
 
 	<%
 		ArrayList<MemberDTO> list = dao.getMemberAll();
@@ -49,7 +51,10 @@ function admin_modify_member(id){
 				<td><%=dto.getName() %></td>
 				<td><%=dto.getEmail() %></td>
 				<td><%=dto.getJob() %></td>
+				<td><%=dto.getPoint() %></td>
+				<td><%=dto.getLevel() %></td>
 				<td><a href="javascript:admin_modify_member('<%=dto.getId() %>')">수정하기</a></td>
+
 			</tr>
 
 	<%
@@ -57,10 +62,14 @@ function admin_modify_member(id){
 	%>
 	</table>	
 
+	<form action="ModifyForm.jsp" name="modifyForm" method="post">
 
-<form method="post" name="modifyForm" action="../member/ModifyForm.jsp">
-<input type="hidden" name="id">
-</form>
+		<input type="hidden" name="id">
+
+	</form>
+
+
+
 
 
 <%@ include file="../Footer.jsp" %>

@@ -16,7 +16,7 @@
 			<%
 		}else{
 			%>
-			
+			<input type="button" value="회원관리" onClick="javaScript:location='admin/MemberManager.jsp'">
 		<input type="button" value="Admin로그아웃" onClick="javaScript:location='admin/AdminLogout.jsp'">
 			<%
 		}
