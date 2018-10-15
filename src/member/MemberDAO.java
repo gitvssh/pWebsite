@@ -1,6 +1,7 @@
 package member;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.sql.*;//DataSource
@@ -285,6 +286,57 @@ public class MemberDAO {
 		 
 		 return x;
 	 }//deleteMember() end-------------------------------------------
+	 
+	 
+	 //------------
+	 //회원 전체목록 리스트 출력
+	 //-------------
+	 public ArrayList<MemberDTO> getMemberAll(MemberDTO dto) throws Exception{
+		 ArrayList<MemberDTO> list=new ArrayList<MemberDTO>();
+		 
+		 Connection con=null;
+		 PreparedStatement pstmt=null;
+		 ResultSet rs=null;
+		 String sql="";
+		 
+		 try{
+			 con=getCon();//커넥션 얻기
+			 pstmt=con.prepareStatement("select * from member");
+			 rs=pstmt.executeQuery();//쿼리실행
+			 
+			 if(rs.next()){
+				 dto=new MemberDTO();
+				 
+				 dto.setId(rs.getString("id"));
+				 dto.setPasswd(rs.getString("passwd"));
+				 dto.setName(rs.getString("name"));
+				 
+				 dto.setJumin1(rs.getString("jumin1"));
+				 dto.setJumin2(rs.getString("jumin2"));
+				 dto.setEmail(rs.getString("email"));
+				 
+				 dto.setZipcode(rs.getString("zipcode"));
+				 dto.setAddr(rs.getString("addr"));
+				 dto.setJob(rs.getString("job"));
+				 dto.setRegdate(rs.getTimestamp("regdate"));
+				 
+				 list.add(dto);
+			 }
+			 
+		 }catch(Exception ex1){
+			 System.out.println("getMemberAll 예외 : "+ex1);
+		 }finally{
+			 try{
+				 if(rs!=null){rs.close();}
+				 if(pstmt!=null){pstmt.close();}
+				 if(con!=null){con.close();}
+			 }catch(Exception ex2){
+				 
+			 }
+		 }//finally end
+		 
+		 return list;
+	 }//getMemberAll() end -----------------------------
 
 	 
 	 
