@@ -121,7 +121,7 @@ if(count==0){//글이 없으면
          
          <%--글제목 --%>
          <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=currentPage %>">
-            <%=dto.getSubject() %>
+           <%=dto.getSubject() %>
          </a>
          <%
          if(dto.getReadcount()>20){//조회수가 20번 이상이면 hot.gif 표시

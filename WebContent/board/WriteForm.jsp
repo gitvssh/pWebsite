@@ -81,6 +81,19 @@ if(request.getParameter("num") != null){
 			 
 			 </tr>
 			 
+			 <tr>
+			 	<td> 카테고리</td>
+			 		<td>
+			 		<select name="category" id="category" >
+			 			<option>자유게시판</option>
+			 			<option>Q&A게시판</option>
+			 			<option>리뷰작성</option>
+			 			
+			 		
+			 		</select>
+			 		</td>
+			 	</tr>
+			 
 			 	<tr>
 				<td >글내용</td>
 				<td>
