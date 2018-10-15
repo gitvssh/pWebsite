@@ -1,6 +1,7 @@
 package member;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.sql.*;//DataSource
@@ -183,6 +184,7 @@ public class MemberDAO {
 				 dto.setAddr(rs.getString("addr"));
 				 dto.setJob(rs.getString("job"));
 				 dto.setRegdate(rs.getTimestamp("regdate"));
+	
 				 
 			 }//if
 		 }catch(Exception ex1){
@@ -212,17 +214,16 @@ public class MemberDAO {
 		 
 		 try{
 			 con=getCon();//커넥션 얻기
-			 sql="update member set passwd=?,name=?,email=?,zipcode=?,addr=?,job=? where id=?";
+			 sql="update member set name=?,email=?,zipcode=?,addr=?,job=? where id=?";
 			 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
 			 
 			 //?값 채우기
-			 pstmt.setString(1, Sha256.encrypt(dto.getPasswd()));
-			 pstmt.setString(2, dto.getName());
-			 pstmt.setString(3, dto.getEmail());
-			 pstmt.setString(4, dto.getZipcode());
-			 pstmt.setString(5, dto.getAddr());
-			 pstmt.setString(6, dto.getJob());
-			 pstmt.setString(7, dto.getId());
+			 pstmt.setString(1, dto.getName());
+			 pstmt.setString(2, dto.getEmail());
+			 pstmt.setString(3, dto.getZipcode());
+			 pstmt.setString(4, dto.getAddr());
+			 pstmt.setString(5, dto.getJob());
+			 pstmt.setString(6, dto.getId());
 			 
 			 pstmt.executeUpdate();//쿼리 실행
 		 }catch(Exception ex1){
@@ -291,8 +292,149 @@ public class MemberDAO {
 		 
 		 return x;
 	 }//deleteMember() end-------------------------------------------
-
 	 
+	 
+	 
+	//=================================관리자============================================= 
+	 //------------
+	 //회원 전체목록 리스트 출력
+	 //-------------
+	 public ArrayList<MemberDTO> getMemberAll(){
+		 ArrayList<MemberDTO> list=new ArrayList<MemberDTO>();
+		 
+		 Connection con=null;
+		 PreparedStatement pstmt=null;
+		 ResultSet rs=null;
+		 String sql="";
+		 
+		 try{
+			 con=getCon();//커넥션 얻기
+			 pstmt=con.prepareStatement("select * from member");
+			 rs=pstmt.executeQuery();//쿼리실행
+			 
+			 System.out.println();
+			 if(rs.next()){
+				MemberDTO dto=new MemberDTO();
+				 
+				 dto.setId(rs.getString("id"));
+				 dto.setPasswd(rs.getString("passwd"));
+				 dto.setName(rs.getString("name"));
+				 
+				 dto.setJumin1(rs.getString("jumin1"));
+				 dto.setJumin2(rs.getString("jumin2"));
+				 dto.setEmail(rs.getString("email"));
+				 
+				 dto.setZipcode(rs.getString("zipcode"));
+				 dto.setAddr(rs.getString("addr"));
+				 dto.setJob(rs.getString("job"));
+				 dto.setRegdate(rs.getTimestamp("regdate"));
+				 dto.setPoint(rs.getInt("point"));
+				 dto.setLevel(rs.getInt("level"));
+				 
+				 list.add(dto);
+			 }
+			 
+		 }catch(Exception ex1){
+			 System.out.println("getMemberAll() 예외 : "+ex1);
+		 }finally{
+			 try{
+				 if(rs!=null){rs.close();}
+				 if(pstmt!=null){pstmt.close();}
+				 if(con!=null){con.close();}
+			 }catch(Exception ex2){
+				 
+			 }
+		 }//finally end
+		 
+		 return list;
+	 }//getMemberAll() end -----------------------------
+
+	 //----------------
+	 //회원정보 수정:관리자 웹에 출력
+	 //-----------------
+	 public MemberDTO getAdminMember(String id) throws Exception{
+		 MemberDTO dto=null;//변수
+		 Connection con=null;
+		 PreparedStatement pstmt=null;
+		 ResultSet rs=null;
+		 try{
+			 con=getCon();//커넥션 얻기
+			 pstmt=con.prepareStatement("select * from member where id='"+id+"'");
+			 rs=pstmt.executeQuery();//쿼리실행
+			 
+			 if(rs.next()){
+				 dto=new MemberDTO();
+				 
+				 dto.setId(rs.getString("id"));
+				 dto.setPasswd(Sha256.encrypt(rs.getString("passwd")));
+				 dto.setName(rs.getString("name"));
+				 
+				 dto.setJumin1(rs.getString("jumin1"));
+				 dto.setJumin2(rs.getString("jumin2"));
+				 dto.setEmail(rs.getString("email"));
+				 
+				 dto.setZipcode(rs.getString("zipcode"));
+				 dto.setAddr(rs.getString("addr"));
+				 dto.setJob(rs.getString("job"));
+				 dto.setRegdate(rs.getTimestamp("regdate"));
+				
+				 dto.setPoint(rs.getInt("point"));
+				 dto.setLevel(rs.getInt("level"));
+	
+				 
+			 }//if
+		 }catch(Exception ex1){
+			 System.out.println("getMember() 예외 : "+ex1);
+		 }finally{
+			 try{
+				 if(rs!=null){rs.close();}
+				 if(pstmt!=null){pstmt.close();}
+				 if(con!=null){con.close();}
+				 
+			 }catch(Exception ex2){
+				 
+			 }
+		 }//finally end
+		 
+		 return dto;
+	 }//getAdminMember() end------------------------------------
+	 
+	 
+	 
+	//----------------
+		 //관리자 회원정보 수정(DB)
+		 //----------------
+		 public void updateAdminMember(MemberDTO dto)throws Exception{
+			 Connection con=null;
+			 PreparedStatement pstmt=null;
+			 String sql="";
+			 
+			 try{
+				 con=getCon();//커넥션 얻기
+				 sql="update member set level=? where id=?";
+				 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
+				 
+				 //?값 채우기
+				 pstmt.setInt(1, dto.getLevel());
+				 pstmt.setString(2, dto.getId());
+				
+				 
+				 pstmt.executeUpdate();//쿼리 실행
+			 }catch(Exception ex1){
+				 System.out.println("updateMember() 예외 : "+ex1);
+			 }finally{
+				 try{
+					 if(pstmt!=null){pstmt.close();}
+					 if(con!=null){con.close();}
+				 }catch(Exception ex2){
+					 
+				 }
+			 }//finally end
+			 
+			 
+		 }//updateAdminMember() end-------------------------------------
+		
+	
 	 
 	 
 }//class

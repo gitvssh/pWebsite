@@ -179,6 +179,7 @@ function checkIt(){
 		</td>
 	</tr>
 	
+	
 	<tr>
 		<td colspan="2" align="center">
 		<input type="submit" value="수정" class="btn2">
