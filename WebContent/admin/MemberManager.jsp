@@ -20,23 +20,29 @@ member.MemberDAO dao=member.MemberDAO.getInstance();//dao 객체 얻기
 
 <script type="text/javascript" src="script.js"></script>
 
+
 <script type="text/javascript">
 function admin_modify_member(id){
 	document.modifyForm.id.value=id;
 	document.modifyForm.submit();
 }
+
+function admin_delete_member(id){
+	document.deleteForm.id.value=id;
+	document.deleteForm.submit();
+}
 </script>
 </head>
 
-<body>
+<body align="center">
 
 <%@ include file="../Header.jsp" %>
 
 <h2>★관리자 전체 회원 관리★</h2>
 
 <table style="width:80%">
-		<tr style="background-color: cyan">
-			<th>아이디</th><th>회원명</th><th>이메일</th><th>직업</th><th>포인트</th><th>레벨</th><th>수정</th>
+		<tr style="background-color: cyan" align="center">
+			<th>아이디</th><th>회원명</th><th>이메일</th><th>직업</th><th>포인트</th><th>레벨</th><th>수정</th><th>삭제</th>
 		</tr>
 		
 		
@@ -54,6 +60,7 @@ function admin_modify_member(id){
 				<td><%=dto.getPoint() %></td>
 				<td><%=dto.getLevel() %></td>
 				<td><a href="javascript:admin_modify_member('<%=dto.getId() %>')">수정하기</a></td>
+				<td><a href="javascript:admin_delete_member('<%=dto.getId() %>')">삭제하기</a></td>
 
 			</tr>
 
@@ -62,7 +69,13 @@ function admin_modify_member(id){
 	%>
 	</table>	
 
-	<form action="ModifyForm.jsp" name="modifyForm" method="post">
+	<form action="AdminModifyForm.jsp" name="modifyForm" method="post">
+
+		<input type="hidden" name="id">
+
+	</form>
+	
+	<form action="AdminDeleteForm.jsp" name="deleteForm" method="post">
 
 		<input type="hidden" name="id">
 

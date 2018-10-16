@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
+<link rel="stylesheet" type="text/css" href="../css/style_member.css" />
 <script type="text/javascript">
 	function begin(){
 		//페이지 실행과 동시에 포커스 설정
