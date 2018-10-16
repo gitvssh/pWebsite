@@ -14,6 +14,8 @@ member.MemberDAO dao=member.MemberDAO.getInstance();//dao 객체 얻기
 
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_admin.css" />
+
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -36,12 +38,13 @@ function admin_delete_member(id){
 
 <body align="center">
 
-<%@ include file="../Header.jsp" %>
 
-<h2>★관리자 전체 회원 관리★</h2>
+<h2 align="center">★관리자 전체 회원 관리★</h2>
 
-<table style="width:80%">
-		<tr style="background-color: cyan" align="center">
+<form>
+
+<table width="80%" align="center" bgcolor="#f9fafb">
+		<tr style="background-color: #b9b9dd" align="center">
 			<th>아이디</th><th>회원명</th><th>이메일</th><th>직업</th><th>포인트</th><th>레벨</th><th>수정</th><th>삭제</th>
 		</tr>
 		
@@ -52,7 +55,7 @@ function admin_delete_member(id){
 		for(MemberDTO dto : list){
 	%>
 
-			<tr>
+			<tr align="center">
 				<td><%=dto.getId() %></td>
 				<td><%=dto.getName() %></td>
 				<td><%=dto.getEmail() %></td>
@@ -67,7 +70,19 @@ function admin_delete_member(id){
 	<%
 		}
 	%>
+	
 	</table>	
+	
+	<table align="center">
+	
+	<tr>
+	<td>
+	<input type="button" value="메인으로" onclick="javaScript:location='../Gallery.jsp'" class="btn">
+	</td>
+	</tr>
+	</table>
+
+</form>
 
 	<form action="AdminModifyForm.jsp" name="modifyForm" method="post">
 
@@ -85,6 +100,5 @@ function admin_delete_member(id){
 
 
 
-<%@ include file="../Footer.jsp" %>
 </body>
 </html> 

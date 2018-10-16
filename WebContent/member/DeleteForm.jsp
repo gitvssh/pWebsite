@@ -23,6 +23,8 @@
 </head>
 
 <body onLoad="begin()">
+<%@ include file="../Header.jsp" %>
+
 <form name="delForm" method="post" action="DeletePro.jsp" onSubmit="return checkIt()">
 <table cellpadding=3 width="500" align="center" bgcolor="#f9fafb">
 	<tr >
