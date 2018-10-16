@@ -15,17 +15,20 @@ request.setCharacterEncoding("utf-8");//post요청 한글 처리
 
 <html>
 <body>
+
 <%
 String id = request.getParameter("id");
 dto.setId(id);//setter작업
+%>
 
+<%
 MemberDAO dao=MemberDAO.getInstance();//dao객체얻기
 dao.updateAdminMember(dto);//dao메서드 호출
 %>
 
 <script>
 	alert("회원정보 수정되었습니다");
-	location.href="../Gallery.jsp";
+	location.href="MemberManager.jsp";
 </script>
 
 </body>

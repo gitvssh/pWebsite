@@ -11,12 +11,15 @@
 
 <%
 String id = request.getParameter("id");
+String passwd = request.getParameter("passwd");
 MemberDAO dao=MemberDAO.getInstance();//dao객체 얻기
-dto =  dao.getMember(id);//dao메서드 호출
+dto =  dao.getAdminMember(id, passwd);//dao메서드 호출
 %>
 
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_admin.css" />
+
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -26,12 +29,12 @@ dto =  dao.getMember(id);//dao메서드 호출
 </head>
 
 <body>
-<form name="userForm" action="ModifyPro.jsp" >
+<form name="modifyForm" action="AdminModifyPro.jsp" >
 
-<table width="600"  border="1" cellpadding="1" align="center">
+<table width="650"   cellpadding="1" align="center" bgcolor="#f9fafb">
 	<tr>
 		<td colspan="2" height="30" align="center">
-		<b><font size="5">(^.^)회원정보 수정(^.^)</font></b>
+		<b><font size="5">회원정보 수정</font></b>
 		</td>
 	</tr>
 	
@@ -40,11 +43,7 @@ dto =  dao.getMember(id);//dao메서드 호출
 		회원정보 수정 합니다
 		</td>
 	</tr>
-	
-	<tr>
-		<td width="200"><b>패스워드입력</b></td>
-		<td width="400">&nbsp;</td>
-	</tr>
+
 	
 	<tr>
 		<td>사용자 ID</td>
@@ -109,8 +108,9 @@ dto =  dao.getMember(id);//dao메서드 호출
 	
 	<tr>
 		<td colspan="2" align="center">
-		<input type="submit" value="수정">
-		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'">
+		<input type="hidden" name="id" id="id" value="<%=dto.getId() %>">
+		<input type="submit" value="수정" class="btn" >
+		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'" class="btn2">
 		</td>
 	</tr>
 	

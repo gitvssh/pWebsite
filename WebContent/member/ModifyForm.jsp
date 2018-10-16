@@ -14,7 +14,7 @@ MemberDTO dto=dao.getMember(id);//dao메서드 호출
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
+<link rel="stylesheet" type="text/css" href="../css/style_member.css" />
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

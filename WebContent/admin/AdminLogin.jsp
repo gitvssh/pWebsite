@@ -5,6 +5,7 @@
     
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/style_admin.css" />
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -30,7 +31,7 @@ function admincheck(){
 
 <body topmargin="20">
 <form name="ff" method="post" action="AdminLoginProc.jsp">
-<table width="400" border="1" align="center">
+<table width="400" align="center" bgcolor="#f9fafb">
 	<tr>
 	<td width="47%" align="center">Admin ID</td>
 	<td width="53%">
@@ -41,14 +42,14 @@ function admincheck(){
 	<tr>
 	<td align="center">Admin PWD</td>
 	<td>
-	<input type="password" name="pwd" id="pwd">
+	<input type="password" name="passwd" id="passwd">
 	</td>
 	</tr>
 	
 	<tr>
 	<td colspan="2" align="center">
-	<input type="button" value="관리자 로그인" onclick="admincheck()">
-	<input type="reset" value="취소">
+	<input type="button" value="관리자 로그인" onclick="admincheck()" class="btn">
+	<input type="reset" value="취소" class="btn2">
 	</td>
 	</tr>
 

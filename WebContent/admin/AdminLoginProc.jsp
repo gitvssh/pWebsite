@@ -8,7 +8,7 @@
     <%
     request.setCharacterEncoding("utf-8");
     String id=request.getParameter("id");
-    String passwd=request.getParameter("pwd");
+    String passwd=request.getParameter("passwd");
     
     admin.AdminDAO dao=admin.AdminDAO.getInstance();//dao객체 얻기
     int check=dao.userCheck(id,passwd);//dao메서드 호출

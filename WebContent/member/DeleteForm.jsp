@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/style_input.css" />
+<link rel="stylesheet" type="text/css" href="../css/style_member.css" />
 <script type="text/javascript">
 	function begin(){
 		//페이지 실행과 동시에 포커스 설정
@@ -23,6 +23,8 @@
 </head>
 
 <body onLoad="begin()">
+<%@ include file="../Header.jsp" %>
+
 <form name="delForm" method="post" action="DeletePro.jsp" onSubmit="return checkIt()">
 <table cellpadding=3 width="500" align="center" bgcolor="#f9fafb">
 	<tr >
