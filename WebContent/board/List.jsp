@@ -136,14 +136,13 @@ function check(){
 	document.searchForm.submit(); //List.jsp로 간다
 }
 function list(){
-	document.listForm.action="List.jsp";
+	document.listForm.action="Community.jsp";
 	document.listForm.submit(); 
 }
 
 </script>
 </head>
-<body >
-
+<body>
 <center><b><h1 id="free">자유게시판</h1></b></center>
 
 <%
@@ -198,7 +197,7 @@ if(totalRecord==0){//글이 없으면
          %>
          
          <%--글제목 --%>
-         <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
+         <a href="Community.jsp?num=<%=dto.getNum() %>&flag=content&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
            <%=dto.getSubject() %>
          </a>
          
@@ -260,7 +259,7 @@ if(totalPage>0){
           //이전블럭
           if(startPage > 10){
              %>
-             <a href="List.jsp?pageNum=<%=startPage - 10%>">[이전블럭]</a>
+             <a href="Community.jsp?pageNum=<%=startPage - 10%>">[이전블럭]</a>
              <%
           }//if
          %>
@@ -268,7 +267,7 @@ if(totalPage>0){
          //page처리
          for(int i=startPage; i<=endPage; i++){
             %>
-            <a href="List.jsp?pageNum=<%=i%>">[<%=i %>]</a>
+            <a href="Community.jsp?pageNum=<%=i%>">[<%=i %>]</a>
             <%
          }//for
          %>
@@ -276,7 +275,7 @@ if(totalPage>0){
          //다음블럭
          if(endPage < pageCount){
             %>
-            <a href="List.jsp?pageNum=<%=startPage + 10%>">[다음블럭]</a>
+            <a href="Community.jsp?pageNum=<%=startPage + 10%>">[다음블럭]</a>
             <%
          }//if
          %>
@@ -284,7 +283,7 @@ if(totalPage>0){
    </tr>
 </table>
 
-<form name="searchForm" method="post" action="List.jsp">
+<form name="searchForm" method="post" action="Community.jsp">
 	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0 class="tb">
 	<tr>
 		<td align=center valign=bottom>
@@ -300,7 +299,7 @@ if(totalPage>0){
 			&nbsp;&nbsp;
 			
 			<a href="javascript:list()" >[리스트 처음으로]</a>
-			 &nbsp;&nbsp;<a href="WriteForm.jsp" ><b>새글쓰기</b></a>
+			 &nbsp;&nbsp;<a href="Community.jsp?&flag=write" ><b>새글쓰기</b></a>
 			
 		</td>
 			
