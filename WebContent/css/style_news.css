@@ -17,10 +17,11 @@ img {border: 0;}
 
 
 #container{
-	position:relative;
+	position:absolute;
 	width: 100%;
-	height: 1500px;
-    margin: 0 auto;
+	height: 100%;
+    margin-bottom: 70px;
+    
 }
 
 #main_pic{
@@ -30,7 +31,7 @@ img {border: 0;}
 	background-size: 100% 600px;
 }
 #main_pic>div{
-	position: absolute;
+	position: relative;
     top: 155px;
     left: 50%;
     margin-left: -470px;
@@ -48,19 +49,15 @@ img {border: 0;}
 
 #d01{
 	width: 1100px;
-	height: 450px;
+	height: 400px;
 	margin: 0 auto;
-	margin-bottom: 50px;
-	margin-top:30px;
+	margin-bottom: 20px;
+	margin-top:20px;
 }
-#d01>a, #d02>a{
+.event_subtitle>a:nth-child(1){
 	text-decoration: none;
 	outline: none;
-}
-
-
-#d01_label, #d02_label{
-	padding-left:25px;
+		padding-left:25px;
 	color:black;
 	font-size: 38px;
 	font-family: 'Song Myung', serif;
@@ -69,11 +66,12 @@ img {border: 0;}
 	
 }
 
-#d01_label:hover{
-	color:black;
-}
 
-#m_1,#m_2,#m_3,#m_4{
+/* .event_subtitle>#d01_label:hover{
+	color:black;
+} */
+
+.img_event{
 	float: left;
 	width:180px;
 	height: 260px;
@@ -81,7 +79,7 @@ img {border: 0;}
 	background-size:180px 260px;
 	opacity: 0.5;
 }
-#movie>a>div>span{
+#d01>#movie>a>div>span{
 	display: block;
 	width:180px;
 	height:60px;
@@ -93,39 +91,39 @@ img {border: 0;}
 }
 
 
-#movie>a>div:hover{
+#d01>#movie>a>div:hover{
 	animation: select 1s 1;
 	opacity: 1;
 }
 
 
 
-
-#d02{
+.event_board{
 	width: 1100px;
 	height: 350px;
 	margin: 0 auto;
-	margin-bottom: 100px;
+	margin-bottom: 15px;
+	margin-top:15px;
 }
 
 
-#d02>ul{
+.event_board>ul{
 	display:table;
     width: 100%;
 }
 
-#d02>ul>li{
+.event_board>ul>li{
 	display: table-row;
     line-height: 14px;
 }
 
-#d02>ul>li>span:nth-child(1){
+.event_board>ul>li>span:nth-child(1){
 	display: table-cell;
     padding: 5px 10px 10px 10px;
     vertical-align: middle;
      width: 1%;
 }
-#d02>ul>li>span:nth-child(1)>span{
+.event_board>ul>li>span:nth-child(1)>span{
 	display: inline-block;
     min-width: 30px;
 	box-sizing: border-box;
@@ -140,7 +138,7 @@ img {border: 0;}
     
 }
 
-#d02>ul>li>span:nth-child(2){
+.event_board>ul>li>span:nth-child(2){
 	display: table-cell;
     padding: 0 10px 5px 0;
     vertical-align: middle;
@@ -148,7 +146,7 @@ img {border: 0;}
     padding-left:10px;
 }
 
-#d02>ul>li>span:nth-child(3){
+.event_board>ul>li>span:nth-child(3){
 	padding: 0 10px 5px 0;
     vertical-align: middle;
     font-size: 18px;

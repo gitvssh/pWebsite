@@ -4,7 +4,7 @@
 	<div class="footer_info">
 	<ul>
 		<li>
-		<small class="txt_copyright">Copyright © <a href="http://localhost:8181/webpage/index03.html">Team Movengers</a> All rights reserved.</small>
+		<small class="txt_copyright">Copyright © <a href="main.jsp">Team Movengers</a> All rights reserved.</small>
 		</li>
 		
 		<li>

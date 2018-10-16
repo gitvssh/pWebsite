@@ -6,11 +6,12 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
-<%
-	BoardDAO dao = BoardDAO.getDao();
-	Vector<EventDTO> vec = dao.getAllEvent();
-	EventDTO edto = null;
+
 %>
+BoardDAO dao=BoardDAO.getDao();
+Vector<EventDTO> vec=dao.getAllEvent();
+EventDTO edto=null;
+
 
 <html>
 <head>
@@ -36,7 +37,7 @@
 			</div>
 		</div>
 		<div id="d03" class="event_subtitle event_board">
-			<a href="#">공지사항</a>
+			<a href="#"><div id="d02_label">공지사항</div></a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
 						href="event_confirm1.html">공지1</a></span> <span>운영자 18.06.19</span></li>
@@ -53,19 +54,20 @@
 		</div>
 		<div id="d01" class="event_subtitle">
 
-			<a href="#">시사회</a>
+			<a href="#"><div id="d01_label">시사회</div></a>
 			<div id="movie">
-				<%-- <%
-					for (int i = 0; i < vec.size(); i++) {
-						edto = (EventDTO) vec.get(i);
-				%>
-				<a href="event1.html"><div id="m_1"
-						style="background-image: url(img/<%=edto.getEvent_img()%>);">
-						<span><%=edto.getEvent_title()%></span>
-					</div> </a>
-				<%
-					}
-				%> --%>
+				<%-- 		<%
+			for(int i=0; i<vec.size();i++){
+				EventDTO edto=(EventDTO)vec.get(i);
+				
+				if(edto.getEvent_id()==1){
+		
+				}else{
+		
+					
+				}
+			%> --%>
+
 				<a href="event1.html"><div id="m_1" class="img_event">
 						<span>'암수살인' 무료 시사회</span>
 					</div> </a> <a href="event2.html"><div id="m_2" class="img_event">
@@ -77,28 +79,34 @@
 					</div> </a>
 
 			</div>
+
+
 		</div>
 
 		<div id="d02" class="event_subtitle event_board">
-			<a href="#">이벤트</a>
+			<a href="#"><div id="d02_label">이벤트</div></a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
 						href="event_confirm1.html">'암수살인' 무대인사 안내</a></span> <span>운영자
 						18.06.19</span></li>
 				<li><span><span>2</span></span> <span><a
-						href="event_confirm2.html">이벤트2</a></span> <span>운영자 18.06.18</span></li>
+						href="event_confirm2.html">이벤트2</a></span> <span>운영자
+						18.06.18</span></li>
 				<li><span><span>3</span></span> <span><a
-						href="event_confirm3.html">이벤트3</a></span> <span>운영자 18.06.18</span></li>
+						href="event_confirm3.html">이벤트3</a></span> <span>운영자
+						18.06.18</span></li>
 				<li><span><span>4</span></span> <span><a
-						href="event_confirm4.html">이벤트4</a></span> <span>운영자 18.06.15</span></li>
+						href="event_confirm4.html">이벤트4</a></span> <span>운영자
+						18.06.15</span></li>
 				<li><span><span>5</span></span> <span><a
-						href="event_confirm5.html">이벤트5</a></span> <span>운영자 18.06.11</span></li>
+						href="event_confirm5.html">이벤트5</a></span> <span>운영자
+						18.06.11</span></li>
 
 			</ul>
 		</div>
 
 		<div id="d04" class="event_subtitle event_board">
-			<a href="#">당첨자발표</a>
+			<a href="#"><div id="d02_label">당첨자발표</div></a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
 						href="event_confirm1.html">'암수살인' 무료 시사회 이벤트 당첨자입니다.</a></span> <span>운영자
