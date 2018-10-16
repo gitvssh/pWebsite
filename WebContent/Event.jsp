@@ -1,7 +1,10 @@
-
-
-<!DOCTYPE html>
-
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import="boardmysql.*" %>
+    <%@ page import="java.util.*" %>
+    event_id:<%=request.getParameter("event_id")  %>
+event_title:<%=request.getParameter("event_title") %>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -11,6 +14,15 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<script type="text/javascript" src="js/prefixfree.min.js"></script>
 	</head>
+<%-- <%
+int event_id=Integer.parseInt(request.getParameter("event_id"));
+
+BoardDAO dao=BoardDAO.getDao();
+EventDTO edto= dao.getEvent(event_id);
+
+event_id=edto.getEvent_id();
+
+%> --%>
 
 	<body><!-- 시사회 페이지 -->
 <header style="position:relative">
