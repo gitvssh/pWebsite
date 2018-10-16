@@ -28,6 +28,9 @@
 
 			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
 			<div id="movie">
+			
+				<%
+				if(%>
 				<a href="event1.html"><div id="m_1">
 						<span>'암수살인' 무료 시사회 이벤트</span>
 					</div></a> <a href="event2.html"><div id="m_2">
