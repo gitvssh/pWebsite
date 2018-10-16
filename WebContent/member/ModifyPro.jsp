@@ -17,6 +17,8 @@ request.setCharacterEncoding("utf-8");//post요청 한글 처리
 <%
 String id=(String)session.getAttribute("memId");
 dto.setId(id);//setter작업
+String passwd=tools.Sha256.encrypt(request.getParameter("passwd"));
+dto.setPasswd(passwd);//setter작업
 
 MemberDAO dao=MemberDAO.getInstance();//dao객체얻기
 dao.updateMember(dto);//dao메서드 호출

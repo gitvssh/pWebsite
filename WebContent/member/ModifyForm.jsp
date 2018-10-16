@@ -89,7 +89,9 @@ function checkIt(){
 
 	<tr>
 		<td>암호</td>
-		<td><input type="password" name="passwd" id="passwd" size="20"><b>필수입력</b></td>
+		<td>
+		<input type="password" name="passwd" id="passwd" size="20">
+		<b>필수입력</b></td>
 	</tr>
 	
 	<tr>
