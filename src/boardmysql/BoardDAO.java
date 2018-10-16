@@ -450,7 +450,6 @@ public class BoardDAO {
 //==============================================================================================================
 	   //event DAO
 	   public Vector<EventDTO> getAllEvent() throws Exception{
-			EventDTO edto=new EventDTO(); // 占쏙옙占쏙옙
 			Vector<EventDTO> vec =new Vector<EventDTO>();
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -462,6 +461,7 @@ public class BoardDAO {
 		        pstmt=con.prepareStatement(sql);
 		        rs=pstmt.executeQuery();//쿼리실행
 				while(rs.next()){
+					EventDTO edto=new EventDTO(); // 占쏙옙占쏙옙
 						edto.setEvent_id(rs.getInt("event_id"));
 						edto.setEvent_title(rs.getString("event_title"));
 						edto.setEvent_startDate(rs.getDate("event_startDate"));

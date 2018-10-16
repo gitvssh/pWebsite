@@ -44,39 +44,16 @@ EventDTO edto=null;
 			for(int i=0; i<vec.size();i++){
 				edto=(EventDTO)vec.get(i);
 				
-				if(i==4){
-					break;
-				}
+			
 			%>
 				  <a href="event1.html"><div id="m_1" style="background-image: url(img/<%=edto.getEvent_img() %>);">
-						<span><%=edto.getEvent_id() %></span>
+						<span><%=edto.getEvent_title() %></span>
 					</div>
 					</a>
 					<%
 			}
 			%>
-		
-			
-				
-				
-					<a href="event2.html"><div id="m_2">
-						<span>마블 최초의 빌런'베놈' 리뷰 이벤트</span>
-					</div>
-					</a>
-					 
-					<a href="event3.html"><div id="m_3">
-						<span>'협상' 무대인사 안내</span>
-					</div>
-					</a>
-					 
-					<a href="event4.html"><div id="m_4">
-						<span>'안시성' 언론,배급 시사회에 초대합니다.</span>
-					</div>
-					</a>
-					
 			</div>
-	
-
 		</div>
 
 		<div id="d02">
