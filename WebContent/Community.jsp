@@ -7,6 +7,7 @@
 <title>무벤져스의 영화갤러리</title>
 <link rel="stylesheet" type="text/css" href="css/style03.css" />
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css" />
+<link rel="stylesheet" type="text/css" href="css/style_board.css"/>
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script
@@ -15,31 +16,35 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
-	
+	<div class="List">
 <%
 String flag=request.getParameter("flag");
 if(flag==null){
 %>
+
 	<%@ include file="board/List.jsp"%>
+
 <%	
-}else if(flag=="content"){
+}else if(flag.equals("content")){
 		%>
 		<%@ include file="board/Content.jsp"%>
 	<%	
-}else if(flag=="write"){
+}else if(flag.equals("write")){
 	%>
 		<%@ include file="board/WriteForm.jsp"%>
 	<%	
-}else if(flag=="update"){
+}else if(flag.equals("update")){
 	%>
 		<%@ include file="board/UpdateForm.jsp"%>
 	<%	
-}else if(flag=="delete"){
+}else if(flag.equals("delete")){
 	%>
 		<%@ include file="board/DeleteForm.jsp"%>
+		
 	<%	
 }
 %>	
+</div>
 	
 	<%@ include file="Footer.jsp"%>
 </body>

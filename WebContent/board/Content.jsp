@@ -16,25 +16,29 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
    <%
       int num = Integer.parseInt(request.getParameter("num"));
       String pageNum = request.getParameter("pageNum");
+      int conNum = Integer.parseInt(request.getParameter("conNum"));
       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
    
       BoardDAO dao = BoardDAO.getDao();
       BoardDTO dto = dao.getArticle(num);
+    
+      
    
       int ref = dto.getRef();
       int re_step = dto.getRe_step();
       int re_level = dto.getRe_level();
    %>
    <body>
+   
       <center><h1>글내용보기</h1></center>
+ 
+  
       <table width="500" border="1" cellpadding="3" align="center">
          <tr height="30">
             <td align="center" width="125" >글번호</td>
-            <td align="center" width="125"><%=dto.getNum() %></td>
-            
+            <td align="center" width="125"><%=conNum %></td>
             <td align="center" width="125" >조회수</td>
             <td align="center" width="125"><%=dto.getReadcount() %></td>
-               
             
             
          </tr>
@@ -61,13 +65,15 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
                im=im.replace("\n", "<br>");
                %>
                <%=im %>
+    
+               
             </td>
          </tr>
          <tr height="30">
             <td colspan="4"  align="right">
-               <input type="button" value="글수정" onClick="document.location.href='UpdateForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'" >
-               <input type="button" value="글삭제" onClick="document.location.href='DeleteForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'">
-               <input type="button" value="답글쓰기" onClick="document.location.href='WriteForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+               <input type="button" value="글수정" onClick="document.location.href='Community.jsp?flag=update&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'" >
+               <input type="button" value="글삭제" onClick="document.location.href='Community.jsp?flag=delete&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'">
+               <input type="button" value="답글쓰기" onClick="document.location.href='Community.jsp?flag=write&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
                <input type="button" value="리스트" onClick="document.location.href='List.jsp?pageNum=<%=pageNum%>'">
             </td>
          </tr>

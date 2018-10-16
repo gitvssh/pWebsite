@@ -12,7 +12,7 @@
 request.setCharacterEncoding("utf-8");
 %>
 
-<%
+<%!
 int nowPage=0;//현재 페이지
 int nowBlock=0;// 현재 블럭
 
@@ -50,7 +50,7 @@ if(request.getParameter("reload")!=null){
 
 <%!
 
-SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 %>
 <%
@@ -136,23 +136,14 @@ function check(){
 	document.searchForm.submit(); //List.jsp로 간다
 }
 function list(){
-	document.listForm.action="List.jsp";
+	document.listForm.action="Community.jsp";
 	document.listForm.submit(); 
 }
 
 </script>
 </head>
-<body >
-<center><b><h1>자유게시판</h1></b></center>
-<table width="700" align="center">
-
-   <tr>
-      <td align="right" >
-         <a href="WriteForm.jsp"><h3>새글쓰기</h3></a>
-      </td>
-   </tr>
-
-</table>
+<body>
+<center><b><h1 id="free">자유게시판</h1></b></center>
 
 <%
 if(totalRecord==0){//글이 없으면
@@ -168,10 +159,10 @@ if(totalRecord==0){//글이 없으면
 <%
 }else{//글이 있으면
 %>
-   <table width="700" border="1" cellpadding="3" align="center">
+   <table width="700" border="1" cellpadding="3" align="center" class="tb">
    
-      <tr>
-         <td align="center" width="50">번호</td>
+      <tr class="t1">
+         <td align="center" width="50">글번호</td>
          <td align="center" width="200">제목 </td>
          <td align="center" width="100">작성자</td>
          <td align="center" width="200">작성일</td>
@@ -206,16 +197,10 @@ if(totalRecord==0){//글이 없으면
          %>
          
          <%--글제목 --%>
-         <a href="Content.jsp?num=<%=dto.getNum() %>&pageNum=<%=nowPage %>">
+         <a href="Community.jsp?num=<%=dto.getNum() %>&flag=content&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
            <%=dto.getSubject() %>
          </a>
-         <%
-         if(dto.getReadcount()>20){//조회수가 20번 이상이면 hot.gif 표시
-         %>
-         <img src="../imgs/hot.gif" height="10" border="0">
-         <%   
-         }//조회수 hot.gif
-         %>
+         
          </td>
          
          <%--글쓴이 --%>
@@ -241,7 +226,7 @@ if(totalRecord==0){//글이 없으면
 	<%
 if(totalPage>0){
 %>
-<table border="1" width="700" align="center">
+<table border="1" width="700" align="center" class="tb">
    <tr>
       <td align="center">
          <%
@@ -274,7 +259,7 @@ if(totalPage>0){
           //이전블럭
           if(startPage > 10){
              %>
-             <a href="List.jsp?pageNum=<%=startPage - 10%>">[이전블럭]</a>
+             <a href="Community.jsp?pageNum=<%=startPage - 10%>">[이전블럭]</a>
              <%
           }//if
          %>
@@ -282,7 +267,7 @@ if(totalPage>0){
          //page처리
          for(int i=startPage; i<=endPage; i++){
             %>
-            <a href="List.jsp?pageNum=<%=i%>">[<%=i %>]</a>
+            <a href="Community.jsp?pageNum=<%=i%>">[<%=i %>]</a>
             <%
          }//for
          %>
@@ -290,7 +275,7 @@ if(totalPage>0){
          //다음블럭
          if(endPage < pageCount){
             %>
-            <a href="List.jsp?pageNum=<%=startPage + 10%>">[다음블럭]</a>
+            <a href="Community.jsp?pageNum=<%=startPage + 10%>">[다음블럭]</a>
             <%
          }//if
          %>
@@ -298,8 +283,8 @@ if(totalPage>0){
    </tr>
 </table>
 
-<form name="searchForm" method="post" action="List.jsp">
-	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0>
+<form name="searchForm" method="post" action="Community.jsp">
+	<table bgcolor="margenta" width="700" border=1 align=center cellpadding=4 cellspacing=0 class="tb">
 	<tr>
 		<td align=center valign=bottom>
 			<select name="keyField">
@@ -307,12 +292,18 @@ if(totalPage>0){
 				<option value="id">이름</option>
 				<option value="content">글내용</option>
 			</select>
-			
+		
 			<input type="text" name="keyWord" size=16>
 			<input type="hidden" name="page" value="0">
 			<input type="button" value="찾기" onClick="check()">
-			<a href="javascript:list()">[리스트 처음으로]</a>
+			&nbsp;&nbsp;
+			
+			<a href="javascript:list()" >[리스트 처음으로]</a>
+			 &nbsp;&nbsp;<a href="Community.jsp?&flag=write" ><b>새글쓰기</b></a>
+			
 		</td>
+			
+			
 		</tr>
 	
 	

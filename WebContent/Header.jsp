@@ -113,9 +113,9 @@
 
 
 
-<div class="search_bar" id="search_bar" style="display: none">
+<div class="search_bar" id="search_bar" style="	display:none">
 	<form name="h_seach" action="검색어입력해서이동" method="post">
-		<input type="hidden" name="search_type" />
+		<input type="none" name="search_type" />
 		<div class="search_in">
 			<input type="text" placeholder="검색어를 입력하세요" value="" name="search"
 				required class="search_text">
@@ -191,7 +191,8 @@
 
 <script type="text/javascript">
 	var show = false;
-	
+	var show2 = false;
+	var show3 = false;
 
 
 	function search_show() {
@@ -209,22 +210,22 @@
 	}
 
 	function sub_menu_show() {
-		if (show) {
+		if (show2) {
 			document.getElementById("sub_menu").style.display = "none";
-			show = false;
+			show2 = false;
 		} else {
 			document.getElementById("sub_menu").style.display = "inline-block";
-			show = true;
+			show2 = true;
 		}
 	}
 	
 	function login_menu_show() {
-		if (show) {
+		if (show3) {
 			document.getElementById("login_tab").style.display = "none";
-			show = false;
+			show3 = false;
 		} else {
 			document.getElementById("login_tab").style.display = "inline-block";
-			show = true;
+			show3 = true;
 		}
 	}
 	
