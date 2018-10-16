@@ -214,16 +214,18 @@ public class MemberDAO {
 		 
 		 try{
 			 con=getCon();//커넥션 얻기
-			 sql="update member set name=?,email=?,zipcode=?,addr=?,job=? where id=?";
+			 sql="update member set passwd=?,name=?,email=?,zipcode=?,addr=?,job=? where id=?";
 			 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
 			 
 			 //?값 채우기
-			 pstmt.setString(1, dto.getName());
-			 pstmt.setString(2, dto.getEmail());
-			 pstmt.setString(3, dto.getZipcode());
-			 pstmt.setString(4, dto.getAddr());
-			 pstmt.setString(5, dto.getJob());
-			 pstmt.setString(6, dto.getId());
+			 
+			 pstmt.setString(1, dto.getPasswd());
+			 pstmt.setString(2, dto.getName());
+			 pstmt.setString(3, dto.getEmail());
+			 pstmt.setString(4, dto.getZipcode());
+			 pstmt.setString(5, dto.getAddr());
+			 pstmt.setString(6, dto.getJob());
+			 pstmt.setString(7, dto.getId());
 			 
 			 pstmt.executeUpdate();//쿼리 실행
 		 }catch(Exception ex1){
@@ -351,7 +353,7 @@ public class MemberDAO {
 	 //----------------
 	 //회원정보 수정:관리자 웹에 출력
 	 //-----------------
-	 public MemberDTO getAdminMember(String id) throws Exception{
+	 public MemberDTO getAdminMember(String id, String passwd) throws Exception{
 		 MemberDTO dto=null;//변수
 		 Connection con=null;
 		 PreparedStatement pstmt=null;
@@ -437,10 +439,55 @@ public class MemberDAO {
 		 //------------------
 		 //관리자 회원 삭제
 		//--------------------
-		
+		 public int deleteAdminMember(String id,String passwd)throws Exception{
+			 Connection con=null;
+			 PreparedStatement pstmt=null;
+			 PreparedStatement pstmt2=null;
+			 ResultSet rs=null;
+			 
+			 String dbPasswd="";
+			 int x=-1;
+			 
+			 try{
+				 con=getCon();//커넥션 얻기
+				 pstmt=con.prepareStatement("select * from member where id=?");
+				 pstmt.setString(1, id);//? 값 채우고
+				 rs=pstmt.executeQuery();//쿼리실행
+				 
+				 if(rs.next()){
+					 
+						 pstmt2=con.prepareStatement("delete from member where id=?");
+						 pstmt2.setString(1, id);
+						 pstmt2.executeUpdate();//쿼리실행
+						 x=1;//회원 탈퇴
+					 
+					 
+					 
+				 }else{
+					 x=0;//존재하지 않을때
+				 }//else end
+				 
+				 
+			 }catch(Exception ex1){
+				 System.out.println("deleteMember 예외 : "+ex1);
+			 }finally{
+				 try{
+					 if(rs!=null){rs.close();}
+					 if(pstmt!=null){pstmt.close();}
+					 if(pstmt2!=null){pstmt2.close();}
+					 if(con!=null){con.close();}
+				 }catch(Exception ex2){
+					 
+				 }
+				 
+			 }//finally end
 			 
 			 
-		 //updateAdminMember() end-------------------------------------
+			 return x;
+		 }//deleteMember() end-------------------------------------------
+		 
+			 
+			 
 		 
 		 
 }//class
