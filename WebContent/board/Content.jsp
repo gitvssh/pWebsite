@@ -29,6 +29,7 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
       int re_level = dto.getRe_level();
    %>
    <body>
+   
       <center><h1>글내용보기</h1></center>
  
   
@@ -70,9 +71,9 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
          </tr>
          <tr height="30">
             <td colspan="4"  align="right">
-               <input type="button" value="글수정" onClick="document.location.href='UpdateForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'" >
-               <input type="button" value="글삭제" onClick="document.location.href='DeleteForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'">
-               <input type="button" value="답글쓰기" onClick="document.location.href='WriteForm.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+               <input type="button" value="글수정" onClick="document.location.href='Community.jsp?flag=update&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'" >
+               <input type="button" value="글삭제" onClick="document.location.href='Community.jsp?flag=delete&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'">
+               <input type="button" value="답글쓰기" onClick="document.location.href='Community.jsp?flag=write&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
                <input type="button" value="리스트" onClick="document.location.href='List.jsp?pageNum=<%=pageNum%>'">
             </td>
          </tr>

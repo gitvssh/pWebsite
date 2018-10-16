@@ -25,19 +25,19 @@ if(flag==null){
 	<%@ include file="board/List.jsp"%>
 
 <%	
-}else if(flag=="content"){
+}else if(flag.equals("content")){
 		%>
 		<%@ include file="board/Content.jsp"%>
 	<%	
-}else if(flag=="write"){
+}else if(flag.equals("write")){
 	%>
 		<%@ include file="board/WriteForm.jsp"%>
 	<%	
-}else if(flag=="update"){
+}else if(flag.equals("update")){
 	%>
 		<%@ include file="board/UpdateForm.jsp"%>
 	<%	
-}else if(flag=="delete"){
+}else if(flag.equals("delete")){
 	%>
 		<%@ include file="board/DeleteForm.jsp"%>
 		

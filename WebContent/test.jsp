@@ -6,55 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%! tools.Init inita=new tools.Init();  %>
+<%! tools.Init init=new tools.Init();  %>
 <%
-
-if(inita.createBoard()){
-	out.print("01.Board 생성 성공<br>");
-}else{
-	out.print("01.Board 생성 실패<br>");
-}
-if(inita.createMember()){
-	out.print("02.Member 생성 성공<br>");
-}else{
-	out.print("02.Member 생성 실패<br>");
-}
-if(inita.createEvent()){
-	out.print("03.Event 생성 성공<br>");
-}else{
-	out.print("03.Event 생성 실패<br>");
-}
-if(inita.createAdmin()){
-	out.print("04.Admin 생성 성공<br>");
-}else{
-	out.print("04.Admin 생성 실패<br>");
-}
-if(inita.createEventApply()){
-	out.print("05.EventApply 생성 성공<br>");
-}else{
-	out.print("05.EventApply 생성 실패<br>");
-}
-if(inita.createEventWin()){
-	out.print("06.EventWin 생성 성공<br>");
-}else{
-	out.print("06.EventWin 생성 실패<br>");
-}
-if(inita.createGenre()){
-	out.print("07.Genre 생성 성공<br>");
-}else{
-	out.print("07.Genre 생성 실패<br>");
-}
-if(inita.createMovieInfo()){
-	out.print("08.MovieInfo 생성 성공<br>");
-}else{
-	out.print("08.MovieInfo 생성 실패<br>");
-}
-if(inita.createMovieReview()){
-	out.print("09.MovieReview 생성 성공<br>");
-}else{
-	out.print("09.MovieReview 생성 실패<br>");
-}
-
+init.createDatabase();
+init.insertBoardDummy();
 
 %>
 </head>

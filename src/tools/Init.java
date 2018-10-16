@@ -5,6 +5,9 @@ import java.sql.*;
 import javax.naming.*;
 import javax.sql.*;
 
+import boardmysql.BoardDAO;
+import boardmysql.BoardDTO;
+
 public class Init {
 
 	private Connection getCon() throws Exception{
@@ -121,7 +124,10 @@ public class Init {
 					+"event_endDate date,"
 					+"event_info varchar(4000),"
 					+"event_win int(3),"
-					+"event_point int(4)"
+					+"event_point int(4),"
+					+"id varchar(12),"
+					+"event_img varchar(10),"
+					+"foreign key(id) references admin(id)"
 				+")");
 			pstmt.executeUpdate();
 			result=true;
@@ -275,4 +281,74 @@ public class Init {
 		return result;
 	}
 	
+	public boolean insertBoardDummy(){
+		boolean result=false;
+		
+		BoardDAO dao = BoardDAO.getDao();
+		BoardDTO dto = new BoardDTO();
+		
+		try{
+		for(int i=1;i<=100;i++){
+			dto.setId("테스트");
+			dto.setEmail("test@test.com");
+			dto.setSubject("테스트 "+i+"번째 글");
+			dto.setContent("테스트입니다.");
+			dto.setIp("111.111.111.11");
+			dto.setCategory(0);
+			dao.insertContent(dto);
+				
+		}//for
+		}catch(Exception ex){
+			System.out.println("게시판 더미입력 에러");
+		}
+		return result;
+	}
+	
+	public void createDatabase(){
+		if(createBoard()){
+			System.out.println("01.Board 생성 성공");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createMember()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createEvent()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createAdmin()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createEventApply()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createEventWin()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createGenre()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createMovieInfo()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+		if(createMovieReview()){
+			System.out.println("01.Board 생성 실패");
+		}else{
+			System.out.println("01.Board 생성 실패");
+		}
+	}
 }
