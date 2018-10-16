@@ -437,36 +437,10 @@ public class MemberDAO {
 		 //------------------
 		 //관리자 회원 삭제
 		//--------------------
-		 public void deleteAdminMember(MemberDTO dto)throws Exception{
-			 Connection con=null;
-			 PreparedStatement pstmt=null;
-			 String sql="";
-			 
-			 try{
-				 con=getCon();//커넥션 얻기
-				 sql="delete member set level=? where id=?";
-				 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
-				 
-				 //?값 채우기
-				 pstmt.setInt(1, dto.getLevel());
-				 pstmt.setString(2, dto.getId());
-				
-				 
-				 pstmt.executeUpdate();//쿼리 실행
-				 
-			 }catch(Exception ex1){
-				 System.out.println("deleteAdminMember() 예외 : "+ex1);
-			 }finally{
-				 try{
-					 if(pstmt!=null){pstmt.close();}
-					 if(con!=null){con.close();}
-				 }catch(Exception ex2){
-					 
-				 }
-			 }//finally end
+		
 			 
 			 
-		 }//updateAdminMember() end-------------------------------------
+		 //updateAdminMember() end-------------------------------------
 		 
 		 
 }//class
