@@ -449,9 +449,9 @@ public class BoardDAO {
 		
 //==============================================================================================================
 	   //event DAO
-	   public EventDTO getEvent(int event_id) throws Exception{
+	   public Vector<EventDTO> getAllEvent() throws Exception{
 			EventDTO edto=new EventDTO(); // 占쏙옙占쏙옙
-			
+			Vector<EventDTO> vec =new Vector<EventDTO>();
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -471,6 +471,8 @@ public class BoardDAO {
 						edto.setEvent_point(rs.getInt("event_point"));
 						edto.setEvent_img(rs.getString("event_img"));
 						edto.setId(rs.getString("id"));//관리자 id
+						
+						vec.add(edto);
 				}
 			}catch(Exception ex1){
 				System.out.println("eventList() 占쏙옙占쏙옙 : " + ex1);
@@ -484,7 +486,7 @@ public class BoardDAO {
 				}catch(Exception ex2){}
 				
 			} // finally end
-			return edto;
+			return vec;
 		} // getEvent end
 	
 }

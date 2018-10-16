@@ -8,7 +8,8 @@ request.setCharacterEncoding("utf-8");
 %>
 <%
 BoardDAO dao=BoardDAO.getDao();
-Vector<EventDTO> vec=null;
+Vector<EventDTO> vec=dao.getAllEvent();
+EventDTO edto=null;
 %>
 
 <html>
@@ -39,24 +40,25 @@ Vector<EventDTO> vec=null;
 	
 			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
 			<div id="movie">
-	<%-- 		<%
+			<%
 			for(int i=0; i<vec.size();i++){
-				EventDTO edto=(EventDTO)vec.get(i);
+				edto=(EventDTO)vec.get(i);
 				
-				if(edto.getEvent_id()==1){
-		
-				}else{
-		
-					
+				if(i==4){
+					break;
 				}
-			%> --%>
-				
-				  <a href="event1.html"><div id="m_1">
-						<span>'암수살인' 무료 시사회 이벤트</span>
+			%>
+				  <a href="event1.html"><div id="m_1" style="background-image: url(img/<%=edto.getEvent_img() %>);">
+						<span><%=edto.getEvent_id() %></span>
 					</div>
 					</a>
+					<%
+			}
+			%>
+		
+			
 				
-				} 
+				
 					<a href="event2.html"><div id="m_2">
 						<span>마블 최초의 빌런'베놈' 리뷰 이벤트</span>
 					</div>
