@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 
 b{
-	color:#4400aa;
+	color:#6c63a6;
 }
 .table{
 	padding-left: 30;
@@ -61,18 +61,18 @@ tr{
 	    border-radius:5px;
 }
 .btn2{
-	    background-color: #4400aa;
+	    background-color: #6c63a6;
 	    color:#fff;
 	 	width:80;
 	    height:30;
 	    border-radius:15px;
-	    border:1px solid #4400aa;
+	    border:1px solid #6c63a6;
 }
 .btn3{
 	 background-color:#fff;
 	 	width:80;
 	    height:30;
 	    border-radius:15px;
-	    border:1px solid #4400aa;
+	    border:1px solid #6c63a6;
 }
 
