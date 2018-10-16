@@ -24,31 +24,37 @@ if(inita.createEvent()){
 }else{
 	out.print("03.Event 생성 실패<br>");
 }
-if(inita.createEventApply()){
-	out.print("EventApply 생성 성공<br>");
+if(inita.createAdmin()){
+	out.print("04.Admin 생성 성공<br>");
 }else{
-	out.print("EventApply 생성 실패<br>");
+	out.print("04.Admin 생성 실패<br>");
+}
+if(inita.createEventApply()){
+	out.print("05.EventApply 생성 성공<br>");
+}else{
+	out.print("05.EventApply 생성 실패<br>");
 }
 if(inita.createEventWin()){
-	out.print("EventWin 생성 성공<br>");
+	out.print("06.EventWin 생성 성공<br>");
 }else{
-	out.print("EventWin 생성 실패<br>");
+	out.print("06.EventWin 생성 실패<br>");
 }
 if(inita.createGenre()){
-	out.print("Genre 생성 성공<br>");
+	out.print("07.Genre 생성 성공<br>");
 }else{
-	out.print("Genre 생성 실패<br>");
+	out.print("07.Genre 생성 실패<br>");
 }
 if(inita.createMovieInfo()){
-	out.print("MovieInfo 생성 성공<br>");
+	out.print("08.MovieInfo 생성 성공<br>");
 }else{
-	out.print("MovieInfo 생성 실패<br>");
+	out.print("08.MovieInfo 생성 실패<br>");
 }
 if(inita.createMovieReview()){
-	out.print("MovieReview 생성 성공<br>");
+	out.print("09.MovieReview 생성 성공<br>");
 }else{
-	out.print("MovieReview 생성 실패<br>");
+	out.print("09.MovieReview 생성 실패<br>");
 }
+
 
 %>
 </head>
