@@ -12,8 +12,10 @@
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
 
 <script type="text/javascript" src="js/prefixfree.min.js"></script>
-<script src="../dist/js/swiper.min.js"></script>
-<link rel="stylesheet" href="../dist/css/swiper.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
 
 
 
@@ -28,6 +30,7 @@
 			document.getElementById("video_1").style.display = "none";
 		}
 	</script>
+
 	<div id="main_container" class="main_container">
 		<div id="main1" class="main1">
 			<iframe id="video_1" class="main_video" width="75%" height="850"
@@ -57,70 +60,81 @@
 					</ul>
 				</div>
 			</div>
+
+			<div class="swiper-container gallery-top">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_1.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_2.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_3.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_4.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_5.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_6.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/main_img_7.jpg')"></div>
+
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next swiper-button-black"></div>
+				<div class="swiper-button-prev swiper-button-black"></div>
+			</div>
+			<div class="swiper-container gallery-thumbs">
+				<div class="swiper-wrapper">
+				<div class="swiper-slide"
+						style="background-image: url('img/mm1.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm2.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm3.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm4.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm5.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm6.jpg')"></div>
+					<div class="swiper-slide"
+						style="background-image: url('img/mm7.jpg')"></div>
+
+				</div>
+			</div>
+
 		</div>
 
 	</div>
 
-<div class="swiper-container gallery-top">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/4/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/5/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/6/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/7/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/8/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/9/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/10/)"></div>
-    </div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
-  </div>
-  <div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/4/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/5/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/6/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/7/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/8/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/9/)"></div>
-      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/10/)"></div>
-    </div>
-  </div>
+
 
 	<!------------------------SWIPE START------------------------------>
 	<script>
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      slidesPerView: 4,
-      loop: true,
-      freeMode: true,
-      loopedSlides: 5, //looped slides should be the same
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
-    var galleryTop = new Swiper('.gallery-top', {
-      spaceBetween: 10,
-      loop:true,
-      loopedSlides: 5, //looped slides should be the same
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      thumbs: {
-        swiper: galleryThumbs,
-      },
-    });
-  </script>
+		var galleryThumbs = new Swiper('.gallery-thumbs', {
+			spaceBetween : 10,
+			slidesPerView : 4,
+			loop : true,
+			freeMode : true,
+			loopedSlides : 5, //looped slides should be the same
+			watchSlidesVisibility : true,
+			watchSlidesProgress : true,
+		});
+		var galleryTop = new Swiper('.gallery-top', {
+			spaceBetween : 10,
+			loop : true,
+			loopedSlides : 5, //looped slides should be the same
+			navigation : {
+				nextEl : '.swiper-button-next',
+				prevEl : '.swiper-button-prev',
+			},
+			thumbs : {
+				swiper : galleryThumbs,
+			},
+		});
+	</script>
 
 	<!------------------------SWIPE END------------------------------>
-
-
 
 	<%@ include file="Footer.jsp"%>
 </body>

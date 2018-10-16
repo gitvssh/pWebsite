@@ -98,19 +98,6 @@ opacity
 	opacity: 0.5;
 }
 
-#m_1{
-	background-image: url("../img/m1.jpg") ;
-}
-#m_2{
-	background-image: url("../img/m2.jpg");
-}
-#m_3{
-	background-image: url("../img/m3.jpg");
-}
-#m_4{
-	background-image: url("../img/m4.jpg");
-}
-
 
 #d01>#movie>a>div>span {
 	display: block;
