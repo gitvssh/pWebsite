@@ -12,20 +12,15 @@
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
 
 <script type="text/javascript" src="js/prefixfree.min.js"></script>
+<script src="../dist/js/swiper.min.js"></script>
+<link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+
+
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
 	<script type="text/javascript">
-	/* 	var show = false;
-		function video_show() {
-			if (show) {
-				document.getElementByClass("main_video").style.display = "none";
-				show = false;
-			} else {
-				document.getElementByClass("main_video").style.display = "block";
-				show = true;
-			}
-		} */
 		function video_show() {
 			document.getElementById("video_1").style.display = "block";
 		}
@@ -35,14 +30,14 @@
 	</script>
 	<div id="main_container" class="main_container">
 		<div id="main1" class="main1">
-			<iframe id="video_1" class="main_video" width="75%" height="850" position="absolute"
-				src="https://www.youtube.com/embed/xLCn88bfW1o?autoplay=1">
-			</iframe>
+			<iframe id="video_1" class="main_video" width="75%" height="850"
+				src="https://www.youtube.com/embed/xLCn88bfW1o?autoplay=1"
+				onmouseleave="video_hide()"> > </iframe>
 
-			<div id="main_img" class="main_box" onclick="video_show()"></div>
+			<div id="main_img" class="main_box" onmouseover="video_show()"></div>
 			<div id="main_txt" class="main_box">
 				<h2>베놈(Venom)</h2>
-				<em>2018.10.03</em>
+				<em>2018.10.03 개봉</em>
 				<p>영웅인가, 악당인가 진실을 위해서라면 몸을 사리지 않는 정의로운 열혈 기자 '에디 브록' 거대 기업 라이프
 					파운데이션의 뒤를 쫓던 그는 이들의 사무실에 잠입했다가 실험실에서 외계 생물체 '심비오트'의 기습 공격을 받게 된다.
 
@@ -65,6 +60,66 @@
 		</div>
 
 	</div>
+
+<div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/4/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/5/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/6/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/7/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/8/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/9/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/10/)"></div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/4/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/5/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/6/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/7/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/8/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/9/)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/10/)"></div>
+    </div>
+  </div>
+
+	<!------------------------SWIPE START------------------------------>
+	<script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      loop: true,
+      freeMode: true,
+      loopedSlides: 5, //looped slides should be the same
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      loop:true,
+      loopedSlides: 5, //looped slides should be the same
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
+  </script>
+
+	<!------------------------SWIPE END------------------------------>
+
 
 
 	<%@ include file="Footer.jsp"%>
