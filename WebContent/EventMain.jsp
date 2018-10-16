@@ -55,27 +55,17 @@
 
 			<a href="#">시사회</a>
 			<div id="movie">
-				<%-- <%
-					for (int i = 0; i < vec.size(); i++) {
-						edto = (EventDTO) vec.get(i);
-				%>
-				<a href="event1.html"><div id="m_1"
-						style="background-image: url(img/<%=edto.getEvent_img()%>);">
-						<span><%=edto.getEvent_title()%></span>
-					</div> </a>
-				<%
-					}
-				%> --%>
-				<a href="event1.html"><div id="m_1" class="img_event">
-						<span>'암수살인' 무료 시사회</span>
-					</div> </a> <a href="event2.html"><div id="m_2" class="img_event">
-						<span>마블 최초의 빌런'베놈' 시사회 안내</span>
-					</div> </a> <a href="event3.html"><div id="m_3" class="img_event">
-						<span>'협상' 동시 시사회 안내</span>
-					</div> </a> <a href="event4.html"><div id="m_4" class="img_event">
-						<span>'안시성' 언론,배급 시사회에 초대합니다.</span>
-					</div> </a>
-
+		<%
+            for(int i=0; i<vec.size();i++){
+                edto=(EventDTO)vec.get(i);
+            %>
+                  <a href="Event.jsp?event_id=<%=edto.getEvent_id()%>"><div id="m_1" style="background-image: url(img/<%=edto.getEvent_img() %>);">
+                        <span><%=edto.getEvent_title() %></span>
+                    </div>
+                    </a>
+                    <%
+            }
+            %>
 			</div>
 		</div>
 
