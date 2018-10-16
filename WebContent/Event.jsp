@@ -1,10 +1,17 @@
+
+<%@page import="java.awt.Event"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="boardmysql.*" %>
     <%@ page import="java.util.*" %>
-    event_id:<%=request.getParameter("event_id")  %>
-event_title:<%=request.getParameter("event_title") %>
+<%
+int event_id=Integer.parseInt(request.getParameter("event_id"));
+BoardDAO dao=BoardDAO.getDao();
+EventDTO edto=dao.getEvent(event_id);
+
+%>
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -14,15 +21,6 @@ event_title:<%=request.getParameter("event_title") %>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<script type="text/javascript" src="js/prefixfree.min.js"></script>
 	</head>
-<%-- <%
-int event_id=Integer.parseInt(request.getParameter("event_id"));
-
-BoardDAO dao=BoardDAO.getDao();
-EventDTO edto= dao.getEvent(event_id);
-
-event_id=edto.getEvent_id();
-
-%> --%>
 
 	<body><!-- 시사회 페이지 -->
 <header style="position:relative">
@@ -48,9 +46,9 @@ event_id=edto.getEvent_id();
 		<div id="d01">
 			<div id="d01_label">시사회 / 이벤트</div>
 			<div id="movie_header"> 
-				<h1>'마녀' 서포터즈 이벤트 1차</h1>
+				<h1><%=edto.getEvent_title() %></h1>
 				<ul>
-					<li>작성자 : 이민하</li>
+					<li><%=edto.getId() %></li>
 					<li>조회 수 : 1171</li>
 					<li>추천 수  : 16</li>
 					<li>댓글 수 : 0</li>
@@ -58,37 +56,8 @@ event_id=edto.getEvent_id();
 				</ul>
 				
 				<div id="pic"></div>
-				<img alt="m2" src="img/m2.jpg" width="600" height="900" />
-				<pre> 
-
-영화 <마녀> 서포터즈 이벤트 -1차입니다. 작품에 관심 있는 분들은 누구나 참여 가능합니다.
-
- 
-
-참여방법
-
-영화수다 게시판에 다음 주제로 재미나게 썰풀어주시고 아래 댓글에 해당글 주소 남겨주시면 됩니다!!
-
-(하나만 해도 되고, 두개 다 해도 됩니다)
-
- 
-
-- 역대급 신인배우 '김다미'에 대해서
-- 역대급 <마녀> 액션 장면에 대해서
-
-(스포 있을 경우, 제목에 표기 반드시 할 것!)
-
- 
-
-이벤트 정보
-
-기간 : 2018년 6월 23일(토)까지
-경품 : 영화예매권 1인 1매 (10명)
-당첨자발표 :  6월 24일 (일)
-
- 
-
-여러들의 많은 참여 바랍니다~!!</pre>
+				<img alt="m2" src="img/<%=edto.getEvent_img() %>" width="600" height="900" />
+				<pre><%=edto.getEvent_info() %></pre>
 				
 				
 				

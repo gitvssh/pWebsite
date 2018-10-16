@@ -1,3 +1,4 @@
+
 package boardmysql;
 
 import java.sql.*;
@@ -488,5 +489,48 @@ public class BoardDAO {
 			} // finally end
 			return vec;
 		} // getEvent end
+	   public EventDTO getEvent(int event_id) throws Exception{
+		      EventDTO edto = null;
+		      Connection con = null;
+		      PreparedStatement pstmt = null;
+		      ResultSet rs = null;
+		      String sql = "";
+		      
+		      try{
+		         con = getCon();
+		         sql="select * from event where event_id=?";
+		        
+		         
+		         //占쌜놂옙占쏙옙 占쏙옙占쏙옙 占싹깍옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+		         pstmt = con.prepareStatement(sql);
+		         pstmt.setInt(1, event_id);
+		         rs = pstmt.executeQuery();
+		         
+		         if(rs.next()){
+		            edto = new EventDTO();
+		            
+		        	edto.setEvent_id(rs.getInt("event_id"));
+					edto.setEvent_title(rs.getString("event_title"));
+					edto.setEvent_startDate(rs.getDate("event_startDate"));
+					edto.setEvent_endDate(rs.getDate("event_endDate"));
+					edto.setEvent_info(rs.getString("event_info"));
+					edto.setEvent_win(rs.getInt("event_win"));
+					edto.setEvent_point(rs.getInt("event_point"));
+					edto.setEvent_img(rs.getString("event_img"));
+					edto.setId(rs.getString("id"));//관리자 id
+		         }//if
+		         
+		      }catch(Exception e){
+		         System.out.println("getEvent() 占쏙옙占쏙옙 : " + e);
+		      }finally{
+		         try{
+		            if(rs != null){rs.close();}
+		            if(pstmt != null){pstmt.close();}
+		            if(con != null){con.close();}
+		         }catch(Exception e1){}
+		      }//finally
+		      
+		      return edto;
+		   }//getArticle() end
 	
 }
