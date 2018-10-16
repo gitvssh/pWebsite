@@ -109,8 +109,8 @@ dto =  dao.getAdminMember(id, passwd);//dao메서드 호출
 	<tr>
 		<td colspan="2" align="center">
 		<input type="hidden" name="id" id="id" value="<%=dto.getId() %>">
-		<input type="submit" value="수정">
-		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'">
+		<input type="submit" value="수정" class="btn" >
+		<input type="button" value="취소" onClick="javaScript:location='../Gallery.jsp'" class="btn2">
 		</td>
 	</tr>
 	
