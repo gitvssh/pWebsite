@@ -1,7 +1,16 @@
+<%@page import="java.util.Vector"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ page import="boardmysql.*" %>
-<!DOCTYPE html>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<%
+BoardDAO dao=BoardDAO.getDao();
+Vector<EventDTO> vec=null;
+%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,15 +22,10 @@
 <script type="text/javascript" src="js/prefixfree.min.js"></script>
 </head>
 <body>
+
 	<!-- 시사회 페이지 -->
 	<%@ include file="Header.jsp"%>
-<%-- <%
-if(request.getParameter("event_id")==null{
-	Vector
-%>
-<%
-}else 
-%> --%>
+	
 	<div id="container">
 
 		<div id="main_pic">
@@ -32,20 +36,44 @@ if(request.getParameter("event_id")==null{
 		</div>
 
 		<div id="d01">
-
+	
 			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
 			<div id="movie">
-			
-				<a href="event1.html"><div id="m_1">
+	<%-- 		<%
+			for(int i=0; i<vec.size();i++){
+				EventDTO edto=(EventDTO)vec.get(i);
+				
+				if(edto.getEvent_id()==1){
+		
+				}else{
+		
+					
+				}
+			%> --%>
+				
+				  <a href="event1.html"><div id="m_1">
 						<span>'암수살인' 무료 시사회 이벤트</span>
-					</div></a> <a href="event2.html"><div id="m_2">
+					</div>
+					</a>
+				
+				} 
+					<a href="event2.html"><div id="m_2">
 						<span>마블 최초의 빌런'베놈' 리뷰 이벤트</span>
-					</div></a> <a href="event3.html"><div id="m_3">
+					</div>
+					</a>
+					 
+					<a href="event3.html"><div id="m_3">
 						<span>'협상' 무대인사 안내</span>
-					</div></a> <a href="event4.html"><div id="m_4">
+					</div>
+					</a>
+					 
+					<a href="event4.html"><div id="m_4">
 						<span>'안시성' 언론,배급 시사회에 초대합니다.</span>
-					</div></a>
+					</div>
+					</a>
+					
 			</div>
+	
 
 		</div>
 

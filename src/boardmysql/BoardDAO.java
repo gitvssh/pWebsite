@@ -449,27 +449,19 @@ public class BoardDAO {
 		
 //==============================================================================================================
 	   //event DAO
-	   public List eventList(int event_id) throws Exception{
-			List<EventDTO> evlist = null; // 占쏙옙占쏙옙
+	   public EventDTO getEvent(int event_id) throws Exception{
+			EventDTO edto=new EventDTO(); // 占쏙옙占쏙옙
 			
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			String sql = "";
 			
 			try{
-				con = getCon();
-				sql = "select * from event order by event_id" ; // 占쏙옙占쏙옙占쏙옙치, 占쏘개
-				
-				pstmt = con.prepareStatement(sql);
-			
-				rs = pstmt.executeQuery(); // 占쏙옙占쏙옙 占쏙옙占쏙옙
-				
-				if(rs.next()){ // 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
-					evlist = new ArrayList<EventDTO>();
-					
-					do{
-						EventDTO edto= new EventDTO();
+				con=getCon();//커넥션 얻기
+				String sql="select * from event";
+		        pstmt=con.prepareStatement(sql);
+		        rs=pstmt.executeQuery();//쿼리실행
+				while(rs.next()){
 						edto.setEvent_id(rs.getInt("event_id"));
 						edto.setEvent_title(rs.getString("event_title"));
 						edto.setEvent_startDate(rs.getDate("event_startDate"));
@@ -479,12 +471,7 @@ public class BoardDAO {
 						edto.setEvent_point(rs.getInt("event_point"));
 						edto.setEvent_img(rs.getString("event_img"));
 						edto.setId(rs.getString("id"));//관리자 id
-						
-						evlist.add(edto); // list占쏙옙 占쌍는댐옙
-					}while(rs.next());
 				}
-				
-				
 			}catch(Exception ex1){
 				System.out.println("eventList() 占쏙옙占쏙옙 : " + ex1);
 				
@@ -497,10 +484,7 @@ public class BoardDAO {
 				}catch(Exception ex2){}
 				
 			} // finally end
-			
-			
-			return evlist;
-			
-		} // getList end
+			return edto;
+		} // getEvent end
 	
 }
