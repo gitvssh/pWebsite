@@ -218,7 +218,6 @@ public class MemberDAO {
 			 pstmt=con.prepareStatement(sql);//PreparedStatement 생성
 			 
 			 //?값 채우기
-			 
 			 pstmt.setString(1, dto.getPasswd());
 			 pstmt.setString(2, dto.getName());
 			 pstmt.setString(3, dto.getEmail());
