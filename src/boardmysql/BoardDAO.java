@@ -28,8 +28,8 @@ public class BoardDAO {
 		
 		int num= dto.getNum();
 		int ref= dto.getRef();
-		int re_step = dto.getRe_step(); // �ۼ���
-		int re_level = dto.getRe_level();  //��� ����
+		int re_step = dto.getRe_step(); // 占쌜쇽옙占쏙옙
+		int re_level = dto.getRe_level();  //占쏙옙占� 占쏙옙占쏙옙
 		
 		int number=0;
 		
@@ -41,7 +41,7 @@ public class BoardDAO {
 		try{
 			con=getCon();
 			pstmt=con.prepareStatement("select max(num) from board");
-			rs=pstmt.executeQuery();//���� ����
+			rs=pstmt.executeQuery();//占쏙옙占쏙옙 占쏙옙占쏙옙
 			
 			if(rs.next()){
 				number=rs.getInt(1)+1;
@@ -60,7 +60,7 @@ public class BoardDAO {
 				
 				re_step=re_step+1;
 				re_level=re_level+1;
-			}else{//����
+			}else{//占쏙옙占쏙옙
 				ref= number;
 				re_step=0;
 				re_level=0;
@@ -84,7 +84,7 @@ public class BoardDAO {
 			pstmt.executeUpdate();
 			
 		}catch(Exception ex1){
-			System.out.println("insertContent: ����"+ex1);
+			System.out.println("insertContent: 占쏙옙占쏙옙"+ex1);
 		}finally{
 			try{
 				if(rs!=null){rs.close();}
@@ -96,7 +96,7 @@ public class BoardDAO {
 	
 }//insertContent end
 	
-	// �� ����
+	// 占쏙옙 占쏙옙占쏙옙
 	public int getArticleCount() throws Exception{
 		int cnt = 0;
 		
@@ -110,11 +110,11 @@ public class BoardDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()){
-				cnt = rs.getInt(1); // �� ����
+				cnt = rs.getInt(1); // 占쏙옙 占쏙옙占쏙옙
 			}
 			
 		}catch(Exception ex1){
-			System.out.println("getArticleCount() ���� : " + ex1);
+			System.out.println("getArticleCount() 占쏙옙占쏙옙 : " + ex1);
 			
 		}finally{
 			try{
@@ -130,9 +130,9 @@ public class BoardDAO {
 	} // getArticleCount end
 	
 	
-	// ����Ʈ
+	// 占쏙옙占쏙옙트
 	public List getList(int start, int cnt) throws Exception{
-		List<BoardDTO> list = null; // ����
+		List<BoardDTO> list = null; // 占쏙옙占쏙옙
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -141,26 +141,26 @@ public class BoardDAO {
 		
 		try{
 			con = getCon();
-			sql = "select * from board order by ref desc, re_step asc limit ?,?"; // ������ġ, �
+			sql = "select * from board order by ref desc, re_step asc limit ?,?"; // 占쏙옙占쏙옙占쏙옙치, 占쏘개
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, start-1); // ���� ��ġ
-			pstmt.setInt(2, cnt); // �� ����
-			rs = pstmt.executeQuery(); // ���� ����
+			pstmt.setInt(1, start-1); // 占쏙옙占쏙옙 占쏙옙치
+			pstmt.setInt(2, cnt); // 占쏙옙 占쏙옙占쏙옙
+			rs = pstmt.executeQuery(); // 占쏙옙占쏙옙 占쏙옙占쏙옙
 			
-			if(rs.next()){ // ���� ������
+			if(rs.next()){ // 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
 				list = new ArrayList<BoardDTO>();
 				
 				do{
 					BoardDTO dto = new BoardDTO();
 					
-					dto.setNum(rs.getInt("num")); // �۳ѹ�
-					dto.setId(rs.getString("id")); // �ۼ��� ID
-					dto.setEmail(rs.getString("email")); // �̸���
-					dto.setSubject(rs.getString("subject")); // ����
+					dto.setNum(rs.getInt("num")); // 占쌜넘뱄옙
+					dto.setId(rs.getString("id")); // 占쌜쇽옙占쏙옙 ID
+					dto.setEmail(rs.getString("email")); // 占싱몌옙占쏙옙
+					dto.setSubject(rs.getString("subject")); // 占쏙옙占쏙옙
 					
-					dto.setRegdate(rs.getTimestamp("regdate")); // �ۼ���
-					dto.setReadcount(rs.getInt("readcount")); // ���� ��
+					dto.setRegdate(rs.getTimestamp("regdate")); // 占쌜쇽옙占쏙옙
+					dto.setReadcount(rs.getInt("readcount")); // 占쏙옙占쏙옙 占쏙옙
 					dto.setRef(rs.getInt("ref"));
 					dto.setRe_step(rs.getInt("re_step"));
 					dto.setRe_level(rs.getInt("re_level"));
@@ -169,13 +169,13 @@ public class BoardDAO {
 					dto.setIp(rs.getString("ip"));
 					dto.setCategory(rs.getInt("category"));
 					
-					list.add(dto); // list�� �ִ´�
+					list.add(dto); // list占쏙옙 占쌍는댐옙
 				}while(rs.next());
 			}
 			
 			
 		}catch(Exception ex1){
-			System.out.println("getList() ���� : " + ex1);
+			System.out.println("getList() 占쏙옙占쏙옙 : " + ex1);
 			
 		}finally{
 			try{
@@ -201,13 +201,13 @@ public class BoardDAO {
 	      
 	      try{
 	         con = getCon();
-	         //��ȸ������
+	         //占쏙옙회占쏙옙占쏙옙占쏙옙
 	         sql="update board set readcount=readcount+1 where num=?";
 	         pstmt = con.prepareStatement(sql);
 	         pstmt.setInt(1, num);
 	         pstmt.executeUpdate();
 	         
-	         //�۳��� ���� �ϱ����� ���� ����
+	         //占쌜놂옙占쏙옙 占쏙옙占쏙옙 占싹깍옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
 	         pstmt = con.prepareStatement("select * from board where num=?");
 	         pstmt.setInt(1, num);
 	         rs = pstmt.executeQuery();
@@ -234,7 +234,7 @@ public class BoardDAO {
 	         }//if
 	         
 	      }catch(Exception e){
-	         System.out.println("getArticle() ���� : " + e);
+	         System.out.println("getArticle() 占쏙옙占쏙옙 : " + e);
 	      }finally{
 	         try{
 	            if(rs != null){rs.close();}
@@ -246,7 +246,7 @@ public class BoardDAO {
 	      return dto;
 	   }//getArticle() end
 	 //------------------------------------
-	   //�� ���� �� => jsp�� ���� �ڷ� ó��
+	   //占쏙옙 占쏙옙占쏙옙 占쏙옙 => jsp占쏙옙 占쏙옙占쏙옙 占쌘뤄옙 처占쏙옙
 	   //------------------------------------
 	   public BoardDTO updateGetArticle(int num) throws Exception{
 	      BoardDTO dto = null;
@@ -280,7 +280,7 @@ public class BoardDAO {
 	            dto.setIp(rs.getString("ip"));
 	         }//if
 	      }catch(Exception e){
-//	         System.out.println("updateGetArticle() ���� : " + e);
+//	         System.out.println("updateGetArticle() 占쏙옙占쏙옙 : " + e);
 	      }finally{
 	         try{
 	            if(rs != null){rs.close();}
@@ -293,7 +293,7 @@ public class BoardDAO {
 	   }//updateGetArticle() end
 	   
 	   //-------------------
-	   //�ۼ��� DB�� �۾�
+	   //占쌜쇽옙占쏙옙 DB占쏙옙 占쌜억옙
 	   //-------------------
 	   public int updateArticle(BoardDTO dto) throws Exception{
 	      String dbPasswd = "";
@@ -313,7 +313,7 @@ public class BoardDAO {
 	             dbPasswd=rs.getString("passwd");
 	             
 	             if(dbPasswd.equals(dto.getPasswd())){
-	            	 //��ȣ�� ��ġ�ϸ� �ۼ���
+	            	 //占쏙옙호占쏙옙 占쏙옙치占싹몌옙 占쌜쇽옙占쏙옙
 	            	 sql="update board set id=?, email=?, subject=?, content=? where num=?";
 	            	 pstmt=con.prepareStatement(sql);
 	            	 
@@ -323,15 +323,15 @@ public class BoardDAO {
 	            	 pstmt.setString(4, dto.getContent());
 	            	 pstmt.setInt(5, dto.getNum());
 	            	 
-	            	 pstmt.executeUpdate();//���� ����
-	            	 x=1;//���� ����
+	            	 pstmt.executeUpdate();//占쏙옙占쏙옙 占쏙옙占쏙옙
+	            	 x=1;//占쏙옙占쏙옙 占쏙옙占쏙옙
 	             }else{
-	            	 //��ȣ�� Ʋ����
+	            	 //占쏙옙호占쏙옙 틀占쏙옙占쏙옙
 	            	 x=0;
 	             }//else end
 	         }//if end
 	      }catch(Exception ex1){
-	         System.out.println("updateArticle() ���� : " + ex1);
+	         System.out.println("updateArticle() 占쏙옙占쏙옙 : " + ex1);
 	      }finally{
 	         try{
 	            if(rs != null){rs.close();}
@@ -344,7 +344,7 @@ public class BoardDAO {
 	   }//updateArticle() end
 	   
 	   //---------------------
-	   //     �ۻ���
+	   //     占쌜삼옙占쏙옙
 	   //---------------------
 	   public int deleteArticle(int num,String passwd) throws Exception{
 		   String dbPasswd="";
@@ -363,20 +363,20 @@ public class BoardDAO {
 			   if(rs.next()){
 				   dbPasswd=rs.getString("passwd");
 				   
-				   if(dbPasswd.equals(passwd)){//��ȣ�� ��ġ�ϸ� ����
-					   //��ȣ�� ��ġ�ϸ� �ۻ���
+				   if(dbPasswd.equals(passwd)){//占쏙옙호占쏙옙 占쏙옙치占싹몌옙 占쏙옙占쏙옙
+					   //占쏙옙호占쏙옙 占쏙옙치占싹몌옙 占쌜삼옙占쏙옙
 					   pstmt=con.prepareStatement("delete from board where num=?");
 					   pstmt.setInt(1, num);
 					   pstmt.executeUpdate();
 					   
-					   x=1; //���� ����
-				   }else{//��ȣ�� Ʋ����
-					   x=0; //���� ����
+					   x=1; //占쏙옙占쏙옙 占쏙옙占쏙옙
+				   }else{//占쏙옙호占쏙옙 틀占쏙옙占쏙옙
+					   x=0; //占쏙옙占쏙옙 占쏙옙占쏙옙
 				   }//else
 			   }//if
 			   
 		   }catch(Exception ex1){
-			   System.out.println("deleteArticle() ���� :" +ex1);
+			   System.out.println("deleteArticle() 占쏙옙占쏙옙 :" +ex1);
 		   }finally{
 			   try{
 				   if(rs!=null){rs.close();}
@@ -390,7 +390,7 @@ public class BoardDAO {
 	   
 	   
 	   
-	   //�˻�
+	   //占싯삼옙
 	   public Vector<BoardDTO> getBoardList(String keyField, String keyWord){
 		   Vector<BoardDTO> vec = new Vector<BoardDTO>();
 		   Connection con=null;
@@ -403,9 +403,9 @@ public class BoardDAO {
 			   stmt=con.createStatement();
 			   
 			   if(keyWord.equals(null) || keyWord.equals("")){
-					//��ü��
+					//占쏙옙체占쏙옙
 					sql="select * from board order by ref desc";
-				}else{//�˻��� ��
+				}else{//占싯삼옙占쏙옙 占쏙옙
 					sql="select * from board where "+
 							keyField+" like '%"+keyWord+"%'"+" order by ref desc";
 							
@@ -435,7 +435,7 @@ public class BoardDAO {
 		         
 			   }
 		   }catch(Exception ex1){
-			   System.out.println("List ���� :" + ex1);
+			   System.out.println("List 占쏙옙占쏙옙 :" + ex1);
 		   }finally{
 			   try{
 					if(rs!=null){rs.close();}
@@ -447,6 +447,60 @@ public class BoardDAO {
 		   return vec;
 	   }
 		
-
+//==============================================================================================================
+	   //event DAO
+	   public List eventList(int event_id) throws Exception{
+			List<EventDTO> evlist = null; // 占쏙옙占쏙옙
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = "";
+			
+			try{
+				con = getCon();
+				sql = "select * from event order by event_id" ; // 占쏙옙占쏙옙占쏙옙치, 占쏘개
+				
+				pstmt = con.prepareStatement(sql);
+			
+				rs = pstmt.executeQuery(); // 占쏙옙占쏙옙 占쏙옙占쏙옙
+				
+				if(rs.next()){ // 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+					evlist = new ArrayList<EventDTO>();
+					
+					do{
+						EventDTO edto= new EventDTO();
+						edto.setEvent_id(rs.getInt("event_id"));
+						edto.setEvent_title(rs.getString("event_title"));
+						edto.setEvent_startDate(rs.getDate("event_startDate"));
+						edto.setEvent_endDate(rs.getDate("event_endDate"));
+						edto.setEvent_info(rs.getString("event_info"));
+						edto.setEvent_win(rs.getInt("event_win"));
+						edto.setEvent_point(rs.getInt("event_point"));
+						edto.setEvent_img(rs.getString("event_img"));
+						edto.setId(rs.getString("id"));//관리자 id
+						
+						evlist.add(edto); // list占쏙옙 占쌍는댐옙
+					}while(rs.next());
+				}
+				
+				
+			}catch(Exception ex1){
+				System.out.println("eventList() 占쏙옙占쏙옙 : " + ex1);
+				
+			}finally{
+				try{
+					if(rs!= null){rs.close();}
+					if(pstmt!=null){pstmt.close();}
+					if(con!=null){con.close();}
+					
+				}catch(Exception ex2){}
+				
+			} // finally end
+			
+			
+			return evlist;
+			
+		} // getList end
 	
 }

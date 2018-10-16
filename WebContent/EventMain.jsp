@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="boardmysql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,13 @@
 <body>
 	<!-- 시사회 페이지 -->
 	<%@ include file="Header.jsp"%>
-
+<%-- <%
+if(request.getParameter("event_id")==null{
+	Vector
+%>
+<%
+}else 
+%> --%>
 	<div id="container">
 
 		<div id="main_pic">
@@ -29,8 +36,6 @@
 			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
 			<div id="movie">
 			
-				<%
-				if(%>
 				<a href="event1.html"><div id="m_1">
 						<span>'암수살인' 무료 시사회 이벤트</span>
 					</div></a> <a href="event2.html"><div id="m_2">
