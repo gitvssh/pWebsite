@@ -184,13 +184,11 @@ button:focus {
 
 .login_tb tr:nth-child(1) td{
 	text-align:center;
-	color:#fff;
 	font-size: 16px;
 		background-color:#6c63a6;
 }
 .login_tb tr:nth-child(2) td{
 	text-align:center;
-	color:#fff;
 	font-size: 16px;
 		background-color:#6c63a6;
 }
