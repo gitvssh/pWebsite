@@ -6,6 +6,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/style_member.css" />
+<link rel="stylesheet" type="text/css" href="css/style03.css" />
+<link rel="stylesheet" type="text/css" href="css/headerfooter.css" />
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -84,6 +86,7 @@ function confirmIDCheck(){
 </script>
 </head>
 <body>
+<%@ include file="../Header.jsp" %>
 <form method="post" name="userForm" action="InputPro.jsp" onSubmit="return check()" >
 
 <table width="700" cellpadding="3" align="center"  class="table" >
@@ -190,7 +193,6 @@ function confirmIDCheck(){
 
 </table>
 </form>
-
 
 
 
