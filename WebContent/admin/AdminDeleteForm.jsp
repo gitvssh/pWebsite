@@ -14,9 +14,12 @@
 
 <%
 String id = request.getParameter("id");
+/* String passwd=tools.Sha256.encrypt(request.getParameter("passwd")); */
 MemberDAO dao=MemberDAO.getInstance();//dao객체 얻기
 dto =  dao.getMember(id);//dao메서드 호출
 %>
+
+
 </head>
 <body>
 
@@ -31,6 +34,7 @@ dto =  dao.getMember(id);//dao메서드 호출
 	
 	<tr>
 	<td colspan=2 align="center" valign="middle">
+	<input type="hidden" name="id" id="id" value="<%=dto.getId() %>">
 	<input type="submit" value="삭제" class="btn">
 	<input type="reset" value="취소" onClick="window.location='MemberManager.jsp'" class="btn2">
 	</td>

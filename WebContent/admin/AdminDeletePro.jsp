@@ -22,11 +22,15 @@ request.setCharacterEncoding("utf-8");//post요청 한글 처리
 <%
 String id = request.getParameter("id");
 dto.setId(id);//setter작업
+String passwd = request.getParameter("passwd");
+dto.setPasswd(passwd);
 %>
+
+
 
 <%
 MemberDAO dao=MemberDAO.getInstance();//dao객체얻기
-dao.deleteAdminMember(dto);//dao메서드 호출
+dao.deleteAdminMember(id, passwd);//dao메서드 호출
 %>
 
 <script>
