@@ -1,5 +1,3 @@
-
-
 <%@page import="java.util.Vector"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -37,10 +35,26 @@
 					놓치지마세요!</span>
 			</div>
 		</div>
+		<div id="d03" class="event_subtitle event_board">
+			<a href="#">공지사항</a>
+			<ul>
+				<li><span><span>1</span></span> <span><a
+						href="event_confirm1.html">공지1</a></span> <span>운영자 18.06.19</span></li>
+				<li><span><span>2</span></span> <span><a
+						href="event_confirm2.html">공지2</a></span> <span>운영자 18.06.18</span></li>
+				<li><span><span>3</span></span> <span><a
+						href="event_confirm3.html">공지3</a></span> <span>운영자 18.06.18</span></li>
+				<li><span><span>4</span></span> <span><a
+						href="event_confirm4.html">공지4</a></span> <span>운영자 18.06.15</span></li>
+				<li><span><span>5</span></span> <span><a
+						href="event_confirm5.html">공지5</a></span> <span>운영자 18.06.11</span></li>
 
-		<div id="d01">
+			</ul>
+		</div>
+		<div id="d01" class="event_subtitle">
 
-			<a href="#"><div id="d01_label">시사회 / 이벤트</div></a>
+
+			<a href="#">시사회 / 이벤트</a>
 			<div id="movie">
 				<%
 					for (int i = 0; i < vec.size(); i++) {
@@ -57,8 +71,26 @@
 			</div>
 		</div>
 
-		<div id="d02">
-			<a href="#"><div id="d02_label">당첨자발표</div></a>
+		<div id="d02" class="event_subtitle event_board">
+			<a href="#">이벤트</a>
+			<ul>
+				<li><span><span>1</span></span> <span><a
+						href="event_confirm1.html">'암수살인' 무대인사 안내</a></span> <span>운영자
+						18.06.19</span></li>
+				<li><span><span>2</span></span> <span><a
+						href="event_confirm2.html">이벤트2</a></span> <span>운영자 18.06.18</span></li>
+				<li><span><span>3</span></span> <span><a
+						href="event_confirm3.html">이벤트3</a></span> <span>운영자 18.06.18</span></li>
+				<li><span><span>4</span></span> <span><a
+						href="event_confirm4.html">이벤트4</a></span> <span>운영자 18.06.15</span></li>
+				<li><span><span>5</span></span> <span><a
+						href="event_confirm5.html">이벤트5</a></span> <span>운영자 18.06.11</span></li>
+
+			</ul>
+		</div>
+
+		<div id="d04" class="event_subtitle event_board">
+			<a href="#">당첨자발표</a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
 						href="event_confirm1.html">'암수살인' 무료 시사회 이벤트 당첨자입니다.</a></span> <span>운영자
