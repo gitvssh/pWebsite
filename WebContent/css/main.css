@@ -140,20 +140,21 @@ img {
 
 /* -------------------Swiper start----------------------- */
 .swiper-container {
-	width: 100%;
+	float:left;
+	width: 75%;
 	height: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .swiper-slide {
 	
-	background-size:75% 850px;
+	background-size:100% 850px;
 	background-repeat:no-repeat;
 }
 
 .gallery-top {
 	height: 80%;
-	width: 100%;
+	width: 75%;
 }
 
 .gallery-thumbs {
