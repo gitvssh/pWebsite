@@ -392,8 +392,8 @@ public class BoardDAO {
 	   
 	   
 	   //占싯삼옙
-	   public Vector<BoardDTO> getBoardList(String keyField, String keyWord){
-		   Vector<BoardDTO> vec = new Vector<BoardDTO>();
+	   public List<BoardDTO> getBoardList(String keyField, String keyWord){
+		   List<BoardDTO> vec = new ArrayList<BoardDTO>();
 		   Connection con=null;
 		   Statement stmt =null;
 		   ResultSet rs=null;
