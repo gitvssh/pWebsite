@@ -20,7 +20,7 @@ BoardDTO dto=dao.updateGetArticle(num);//dao메서드 호출
 <body >
 <center><b><font size="+2">글 수정</font></b></center>
 
-<form name="writeForm" method="post" action="UpdatePro.jsp?pageNum=<%=pageNum %>">
+<form name="writeForm" method="post" action="Community.jsp?flag=updatepro&pageNum=<%=pageNum %>">
 	<table width="400" border="1" cellpadding="5"  align="center">
 	
 	<tr>

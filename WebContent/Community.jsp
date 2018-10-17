@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,10 +49,15 @@ if(flag==null){
 	%>
 		<%@ include file="board/WritePro.jsp" %>
 	<%
+
+}else if(flag.equals("deletepro")){
+	%>
+	<%@ include file="board/DeletePro.jsp" %>
+	<%
 }else if(flag.equals("updatepro")){
 	%>
-		<%@ include file="board/UpdatePro.jsp" %>
-	<%
+		<jsp:include page="board/UpdatePro.jsp"/>
+		<%
 }
 	%>
 	
