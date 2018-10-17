@@ -74,7 +74,7 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
                <input type="button" value="글수정" onClick="document.location.href='Community.jsp?flag=update&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'" >
                <input type="button" value="글삭제" onClick="document.location.href='Community.jsp?flag=delete&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>'">
                <input type="button" value="답글쓰기" onClick="document.location.href='Community.jsp?flag=write&num=<%=dto.getNum()%>&pageNum=<%=pageNum%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
-               <input type="button" value="리스트" onClick="document.location.href='List.jsp?pageNum=<%=pageNum%>'">
+               <input type="button" value="리스트" onClick="document.location.href='Community.jsp?pageNum=<%=pageNum%>'">
             </td>
          </tr>
       </table>
