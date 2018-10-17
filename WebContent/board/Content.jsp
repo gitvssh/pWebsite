@@ -33,32 +33,44 @@ pageNum:<%=request.getParameter("pageNum")%> --%>
       <center><h1>글내용보기</h1></center>
  
   
-      <table width="500" border="1" cellpadding="3" align="center">
-         <tr height="30">
-            <td align="center" width="125" >글번호</td>
+      <table width="500" border="1" cellpadding="3" align="center" class="contenttb">
+         <tr height="30" >
+            <td align="center" width="125" style="background-color: #f9fafb" >글번호</td>
             <td align="center" width="125"><%=conNum %></td>
-            <td align="center" width="125" >조회수</td>
+            <td align="center" width="125" style="background-color: #f9fafb" >조회수</td>
             <td align="center" width="125"><%=dto.getReadcount() %></td>
             
             
          </tr>
          <tr height="30">
-            <td align="center" width="125" >작성자</td>
+            <td align="center" width="125" style="background-color: #f9fafb" >작성자</td>
             <td align="center" width="125"><%=dto.getId() %></td>
             
-            <td align="center" width="125" >작성일</td>
+            <td align="center" width="125" style="background-color: #f9fafb" >작성일</td>
             <td align="center" width="125"><%=sdf.format(dto.getRegdate()) %></td>
          </tr>
          <tr height="30">
-            <td align="center" width="125" >카테고리</td>
-            <td align="center" width="375" colspan="3"><%=dto.getCategory() %></td>
+            <td align="center" width="125" style="background-color: #f9fafb" >카테고리</td>
+           <%
+          	String category=request.getParameter("category");
+           	if(dto.getCategory()==0){
+           		category="자유게시판";
+           	}else if(dto.getCategory()==1){
+           		category="Q&A게시판";
+           	}else if(dto.getCategory()==2){
+           		category="리뷰작성";
+           		
+           	}
+           %>
+        
+            <td align="center" width="375" colspan="3"><%=category %></td>
          </tr>
          <tr height="30">
-            <td align="center" width="125" >글제목</td>
+            <td align="center" width="125" style="background-color: #f9fafb" >글제목</td>
             <td align="center" width="375" colspan="3"><%=dto.getSubject() %></td>
          </tr>
          <tr height="30">
-            <td align="center" width="125" >글내용</td>
+            <td align="center" width="125" style="background-color: #f9fafb">글내용</td>
             <td align="center" width="375" colspan="3">
             <%
                String im = dto.getContent();

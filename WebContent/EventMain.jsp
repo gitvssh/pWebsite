@@ -58,8 +58,7 @@
 					for (int i = 0; i < vec.size(); i++) {
 						edto = (EventDTO) vec.get(i);
 				%>
-				<a href="Event.jsp?event_id=<%=edto.getEvent_id()%>"><div
-						id="m_1"
+				<a href="Event.jsp?event_id=<%=edto.getEvent_id()%>"><div id="m_1"
 						style="background-image: url(img/<%=edto.getEvent_img()%>);">
 						<span><%=edto.getEvent_title()%></span>
 					</div> </a>

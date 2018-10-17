@@ -9,19 +9,35 @@
 	
 	
 }
-.tb{
+#listtb{
 	width:100%;
 	text-align: center;
-	border: 0;
+	border :0;
+	margin: 0 auto;
 	font-size: 15px;
+	
+}
+#contenttb{
+	text-align: center;
+	border :0;
+	font-size: 15px;
+	width:100%;
+	
+}
+#updatetb{
+	
 }
 #free{
 	margin-bottom: 20px;
 }
 .t1{
 	
-	background: #86E57F;
+	background: #b9b9dd;
 }
-.a1{
-	margin-left: 50px;
+.tb{
+   width:100%;
+   text-align: center;
+   border: 0;
+   font-size: 15px;
+   
 }

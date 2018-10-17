@@ -30,9 +30,9 @@ String pageNum=request.getParameter("pageNum");
 <body >
 <center><b><font size="+2">글 삭제</font></b></center>
 <form method="post" name="delForm" action="Community.jsp?&flag=deletepro&pageNum=<%=pageNum %>" onSubmit="return deleteSave()">
-	<table border="1" cellpadding="5" width="360" align="center">
+	<table border="1" cellpadding="5" width="360" align="center" id="deltb">
 		<tr height="30">
-			<td align="center" >
+			<td align="center" style="background-color: #b9b9dd">
 			<b>암호를 입력하시오</b>
 			</td>
 		</tr>

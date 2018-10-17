@@ -45,7 +45,7 @@ if(request.getParameter("num") != null){
 			<input type="hidden" name="re_step" value="<%= re_step %>">
 			<input type="hidden" name="re_level" value="<%= re_level %>">
 			
-			<table width="800" cellpadding="3" align="center">
+			<table width="800" cellpadding="3" align="center" id="writetb">
 			
 			<!--  회원아이디 -->
 			<tr>
