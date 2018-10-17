@@ -14,16 +14,35 @@
 
 <body>
 	<%@ include file="Header.jsp"%>
-
-	<section>
-		<article class="topimage">
-			<div class="info_crew">
-				<span class="screen_out">셀</span><span class="txt_cell">팀 소개
-					페이지</span> <span class="screen_out">크루명</span><span class="txt_name">이승현</span>
-			</div>
-		</article>
-	</section>
-	
+	<div class="upperDiv">
+		<table class="innerTable">
+			<tr>
+				<td class="cha_img">
+				</td>
+				<td class="innerEmpty">
+					<p></p>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td>
+								<h2>전체 설계/조율/지휘, 팀 소개 페이지 등등</h2>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h1>이승현</h1>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
 	<!-- 상단 이미지 삽입 -->
 	<section id="krew_content" class="wrap_view">
 		<div class="wrap_subject working_story">
