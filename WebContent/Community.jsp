@@ -41,9 +41,19 @@ if(flag==null){
 	%>
 		<%@ include file="board/DeleteForm.jsp"%>
 		
-	<%	
+	<%
+}else if(flag.equals("writepro")){
+	%>
+		<%@ include file="board/WritePro.jsp" %>
+	<%
+}else if(flag.equals("updatepro")){
+	%>
+		<%@ include file="board/UpdatePro.jsp" %>
+	<%
 }
-%>	
+	%>
+	
+	
 </div>
 	
 	<%@ include file="Footer.jsp"%>

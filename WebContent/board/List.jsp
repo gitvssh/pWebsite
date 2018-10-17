@@ -153,7 +153,9 @@ if(totalRecord==0){//글이 없으면
          <td align="center">
          게시판에 저장된 글이 없습니다.
          </td>
+         <input type="button" value="글쓰기" onclick="window.location='Community.jsp?&flag=write'">
       </tr>
+      
    </table>
 
 <%
@@ -187,7 +189,8 @@ if(totalRecord==0){//글이 없으면
          if(dto.getRe_level()>0){//답글이면
             wid=5*(dto.getRe_level());
          %>
-        
+        	<img src="img/level.gif" width="<%=wid %>" height="16">
+         	<img src="img/re.gif">
          <%
          }else{//원글
             %>

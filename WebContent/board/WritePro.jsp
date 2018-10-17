@@ -18,5 +18,5 @@ dto.setIp(request.getRemoteAddr());
 
 BoardDAO dao=BoardDAO.getDao();
 dao.insertContent(dto);
-response.sendRedirect("List.jsp");
+response.sendRedirect("Community.jsp");
 %>

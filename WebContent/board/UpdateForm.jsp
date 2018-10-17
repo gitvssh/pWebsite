@@ -63,7 +63,7 @@ BoardDTO dto=dao.updateGetArticle(num);//dao메서드 호출
 		<td colspan="2" align="center">
 		<input type="submit" value="글수정">
 		<input type="reset" value="다시수정">
-		<input type="button" value="글목록보기"	onClick="document.location='List.jsp?pageNum=<%=pageNum %>'">
+		<input type="button" value="글목록보기"	onClick="document.location='Community.jsp?pageNum=<%=pageNum %>'">
 		</td>
 	</tr>
 	</table>
