@@ -55,20 +55,21 @@
 				if (session.getAttribute("memId") == null) {//로그인 x
 			%>
 
-			<form  name="inform" method="post" action="member/LoginPro.jsp"
+			<form name="inform" method="post" action="member/LoginPro.jsp"
 				onSubmit="return check()">
 
 				<table class="login_tb" width="300" align="center" border="1">
 					<tr>
 						<td width="100" align="right">아이디</td>
 
-						<td width="100"><input type="text" name="id" size="24" placeholder="아이디를 입력해주세요.">
-						</td>
+						<td width="100"><input type="text" name="id" size="24"
+							placeholder="아이디를 입력해주세요."></td>
 					</tr>
 
 					<tr>
 						<td align="right">비밀번호</td>
-						<td><input type="password" name="passwd" size="24" placeholder="비밀번호를 입력해주세요."></td>
+						<td><input type="password" name="passwd" size="24"
+							placeholder="비밀번호를 입력해주세요."></td>
 					</tr>
 
 					<tr>
@@ -105,7 +106,7 @@
  %>
 		</li>
 		<%-- 로그인 끝 --%>
-	
+
 	</nav>
 </div>
 
@@ -113,7 +114,7 @@
 
 
 
-<div class="search_bar" id="search_bar" style="	display:none">
+<div class="search_bar" id="search_bar" style="display: none">
 	<form name="h_seach" action="검색어입력해서이동" method="post">
 		<input type="none" name="search_type" />
 		<div class="search_in">
@@ -178,7 +179,7 @@
 			</dd>
 		</dl>
 		<!-----------------------서브메뉴 끝-------------------->
-		
+
 
 
 
@@ -193,7 +194,6 @@
 	var show = false;
 	var show2 = false;
 	var show3 = false;
-
 
 	function search_show() {
 		if (show) {
@@ -218,7 +218,7 @@
 			show2 = true;
 		}
 	}
-	
+
 	function login_menu_show() {
 		if (show3) {
 			document.getElementById("login_tab").style.display = "none";
@@ -228,5 +228,4 @@
 			show3 = true;
 		}
 	}
-	
 </script>

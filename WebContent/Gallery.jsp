@@ -7,10 +7,6 @@
 <title>무벤져스의 영화갤러리</title>
 <link rel="stylesheet" type="text/css" href="css/style03.css" />
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css" />
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://code.jq/uery.com/jquery-latest.min.js"></script>
 </head>
 <body>

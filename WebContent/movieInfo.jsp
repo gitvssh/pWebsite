@@ -11,8 +11,6 @@
 <title>탐정:리턴즈</title>
 <link rel="stylesheet" type="text/css" href="css/style_movieinfo.css" />
 <link rel="stylesheet" type="text/css" href="css/headerfooter.css" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>

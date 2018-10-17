@@ -59,7 +59,7 @@ img {
 
 .main_txt {
 	float: right;
-	width: 25%;
+	width: 20.5%;
 	height: 800px;
 	position: relative;
 	background-color: rgba(3, 3, 3, 0.9);
@@ -89,6 +89,7 @@ img {
 .main_txt>p {
 	margin-bottom: 20px;
 	color: #fff;
+	    margin: 0 0 10px;
 }
 
 .main_sub {
