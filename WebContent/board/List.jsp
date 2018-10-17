@@ -26,102 +26,52 @@ int beginPerPage=0;// 시작 페이지( 페이지의 시작)
 
 String keyField="";
 String keyWord="";
+SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
 BoardDAO dao=BoardDAO.getDao();//dao객체 얻기
 Vector<BoardDTO> vec=null;
 
 %>
 
+
+
 <%
+String pageNum=request.getParameter("pageNum");
+if(pageNum==null){pageNum="1";};
+int currentPage=Integer.parseInt(pageNum);
+
+int startRow=(currentPage-1)*numPerPage+1;
+int endRow=currentPage*numPerPage;
+
+
+int count=0;//글 갯수
+int number=0;//글 번호
+List list=null;
+
+BoardDAO dao=BoardDAO.getDao();//dao객체 얻기
+count=dao.getArticleCount();//dao메서드 호출하여, 글 갯수 얻기
+
+
+
+number=count-(currentPage-1)*numPerPage;//보여질 글번호
 
 String im=request.getParameter("keyWord");
 
 if(request.getParameter("keyWord")!=null){
 	keyWord=request.getParameter("keyWord");
 	keyField=request.getParameter("keyField");
+	list=dao.getBoardList(keyField, keyWord);//dao메서드 호출
+	count=list.size();//총 글갯수
 }
-if(request.getParameter("reload")!=null){
-	if(request.getParameter("reload").equals("true")){
+if(request.getParameter("keyWord")==null){
 		keyWord="";
 		keyField="";
-	}
+	if(count>0){//글이 존재하면
+		list=dao.getList(startRow, numPerPage);//dao메서드 호출
+	}//시작위치, 개수
 }
-
 %>
 
-<%!
-
-SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm");
-
-%>
-<%
-
-vec=dao.getBoardList(keyField, keyWord);//dao메서드 호출
-
-totalRecord=vec.size();//총 글갯수
-
-if(request.getParameter("page")!=null){
-	nowPage=Integer.parseInt(request.getParameter("page"));//현재 페이지
-}
-
-beginPerPage=nowPage * numPerPage; //시작 페이지 계산
-		// 0 * 10 = 0 	0 ~ 9		//해당페이지의 시작
-		// 1 * 10 = 10	10 ~ 19
-		// 2 * 10 = 20	20 ~ 29
-		// 3 * 10 = 30	30 ~ 39
-		// 4 * 10 = 40	40 ~ 49
-		
-		
-totalPage=(int)Math.ceil((double)totalRecord/numPerPage); //Math.ceil()=>올림값
-totalBlock=(int)Math.ceil((double)totalPage/pagePerBlock);//전체 블럭계산
-		// 예를 글갯수 32개라면 : 4개의 페이지 나오도록 한다
-		//totalPage=(int)Math.ceil((double)32/10);
-if(request.getParameter("nowBlock")!=null){
-	nowBlock=Integer.parseInt(request.getParameter("nowBlock"));//현재 블럭을 얻는다
-}
-		
-%>
-
- <%-- <%
-int pageSize=10;
-vec=dao.getBoardList(keyField, keyWord);
-String pageNum=request.getParameter("pageNum");
-if(pageNum==null){
-	pageNum="1";
-	}//넘어온 페이지넘버 값이 없으면 1페이지로
-int currentPage=Integer.parseInt(pageNum);
-
-int startRow=(currentPage-1)*pageSize+1;
-/* (1-1)*10+1=1
-(2-1)*10+1=11
-(3-1)*10+1=21
-(4-1)*10+1=31
-(5-1)*10+1=41 */
-int endRow=currentPage*pageSize;
-/* 1*10=10
-2*10=20
-3*10=30
-4*10=40
-5*10=50 */
-
-int count=0;//글 갯수
-int number=0;//글 번호
-
-
-
-count=dao.getArticleCount();//dao메서드 호출하여, 글 갯수 얻기
-
-if(count>0){//글이 존재하면
-   vec=dao.getBoardList(keyField, keyWord);//dao메서드 호출
-}//시작위치, 개수
-
-number=count-(currentPage-1)*pageSize;//보여질 글번호
-//37-(3-1)*10=17
-
-//1페이지 1~10
-//2페이지 11~20
-//3 페이지 21~30
-//4페이지 31~37
-%>  --%>
 
 <html>
 <head>
@@ -146,7 +96,7 @@ function list(){
 <center><b><h1 id="free">자유게시판</h1></b></center>
 
 <%
-if(totalRecord==0){//글이 없으면
+if(count==0){//글이 없으면
 %>
    <table width="700" border=1 align="center">
       <tr>
@@ -172,8 +122,8 @@ if(totalRecord==0){//글이 없으면
          
       </tr>
    <%
-   for(int i=0;i<vec.size();i++){
-      BoardDTO dto=(BoardDTO)vec.get(i);
+   for(int i=0;i<list.size();i++){
+      BoardDTO dto=(BoardDTO)list.get(i);
       
       if(dto.getCategory()!=0){
     	  continue;
@@ -181,7 +131,7 @@ if(totalRecord==0){//글이 없으면
     	  
       %>
       <tr height="30">
-          <td align="center"> <%=totalRecord-i %></td> 
+          <td align="center"> <%=count-(currentPage-1)*numPerPage-i %></td> 
          <td>
          <%-- 답글 들여쓰기 --%>
          <%
@@ -200,7 +150,7 @@ if(totalRecord==0){//글이 없으면
          %>
          
          <%--글제목 --%>
-         <a href="Community.jsp?num=<%=dto.getNum() %>&flag=content&pageNum=<%=nowPage %>&conNum=<%=totalRecord-i %>">
+         <a href="Community.jsp?num=<%=dto.getNum() %>&flag=content&pageNum=<%=nowPage %>&conNum=<%=count-(currentPage-1)*numPerPage-i %>">
            <%=dto.getSubject() %>
          </a>
          
@@ -209,7 +159,7 @@ if(totalRecord==0){//글이 없으면
          <%--글쓴이 --%>
          <td align="center">
             <a href="mailto:<%=dto.getEmail() %>">
-               <%=dto.getId() %>
+               <%=dto.getId() %>/총글개수:<%=count %>
             </a>
          </td>
          
@@ -227,13 +177,13 @@ if(totalRecord==0){//글이 없으면
 
 <%------------------------블럭처리, 페이지 처리--------------------%>
 	<%
-if(totalPage>0){
+if(count>0){
 %>
 <table border="1" width="700" align="center" class="tb">
    <tr>
       <td align="center">
          <%
-         int pageCount=totalPage/numPerPage+(totalRecord%numPerPage==0?0:1);
+         int pageCount=count/numPerPage+(totalRecord%numPerPage==0?0:1);
          //int pagecount=(int)(Math.ceil(count/pageSize));
          
          int pageBlock=10;//블럭당 페이지 수 10개
