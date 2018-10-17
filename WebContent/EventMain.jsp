@@ -35,7 +35,7 @@
 					놓치지마세요!</span>
 			</div>
 		</div>
-		<div id="d03" class="event_subtitle event_board">
+		<div class="event_subtitle event_board">
 			<a href="#">공지사항</a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 
-		<div id="d02" class="event_subtitle event_board">
+		<div class="event_subtitle event_board">
 			<a href="#">이벤트</a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
@@ -89,7 +89,7 @@
 			</ul>
 		</div>
 
-		<div id="d04" class="event_subtitle event_board">
+		<div class="event_subtitle event_board">
 			<a href="#">당첨자발표</a>
 			<ul>
 				<li><span><span>1</span></span> <span><a
@@ -111,9 +111,9 @@
 			</ul>
 		</div>
 
+		<%@ include file="Footer.jsp"%>
 	</div>
 
 
-	<%@ include file="Footer.jsp"%>
 </body>
 </html>
