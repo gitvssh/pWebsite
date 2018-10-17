@@ -62,19 +62,20 @@
 					<tr>
 						<td width="100" align="right">아이디</td>
 
-						<td width="100"><input type="text" name="id" size="24"
+						<td width="100" ><input type="text" name="id" size="29"
 							placeholder="아이디를 입력해주세요."></td>
 					</tr>
 
 					<tr>
 						<td align="right">비밀번호</td>
-						<td><input type="password" name="passwd" size="24"
+						<td><input type="password" name="passwd" size="29"
 							placeholder="비밀번호를 입력해주세요."></td>
 					</tr>
 
 					<tr>
-						<td colspan="2" align="center"><input type="submit"
+						<td align="center"><input type="submit" 
 							value="로그인" onClick="javaScript:location='member/LoginPro.jsp'">
+							</td><td align="center">
 							<input type="button" value="회원가입"
 							onClick="javaScript:location='member/InputForm.jsp'"></td>
 					</tr>

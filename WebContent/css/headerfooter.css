@@ -181,23 +181,22 @@ button:focus {
 	width: 1px;
 	border: 0;
 }
-
-.login_tb>tr>td>input::placeholder {
+.login_tb input::placeholder {
 	font-size: 12px;
-	color: red;
-	background-color: #6c63a6;
 	font-style:italic;
 }
 
 .login_tb tr:nth-child(1) td {
 	text-align: center;
 	font-size: 16px;
+	color:#fff;
 	background-color: #6c63a6;
 }
 
 .login_tb tr:nth-child(2) td {
 	text-align: center;
 	font-size: 16px;
+	color:#fff;
 	background-color: #6c63a6;
 }
 
