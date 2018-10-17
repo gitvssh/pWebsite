@@ -29,43 +29,45 @@ img {
 .main_container {
 	width: 100%;
 	height: 100%;
+	bottom:110px;
 }
 
-.main1 {
+.main {
 	width: 100%;
 	height: 1000px;
 	position: relative;
 	display: inline-block;
 }
 
+
 #video_1 {
 	position: absolute;
 	display: none;
 	width: 75%;
-	z-index: 1;
+	z-index: 10000;
 	border: 0px;
 }
 
 #main_img {
 	width: 75%;
-	height: 850px;
+	height: 800px;
 	float: left;
 	position: relative;
 	background: url("../img/main_img_1.jpg") no-repeat;
 	z-index: 0;
 }
 
-#main_txt {
-	float: left;
+.main_txt {
+	float: right;
 	width: 25%;
-	height: 850px;
+	height: 800px;
 	position: relative;
 	background-color: rgba(3, 3, 3, 0.9);
 	padding: 50px 40px 0 43px;
 	z-index: 2;
 }
 
-#main_txt>h2 {
+.main_txt>h2 {
 	margin-bottom: 10px;
 	line-height: 1.1;
 	font-size: 46px;
@@ -74,7 +76,7 @@ img {
 	color: #fff;
 }
 
-#main_txt>em {
+.main_txt>em {
 	display: block;
 	margin-bottom: 20px;
 	padding-bottom: 8px;
@@ -84,7 +86,7 @@ img {
 	color: #fff;
 }
 
-#main_txt>p {
+.main_txt>p {
 	margin-bottom: 20px;
 	color: #fff;
 }
@@ -134,21 +136,25 @@ img {
 	text-decoration: none;
 }
 
+
+
+/* -------------------Swiper start----------------------- */
 .swiper-container {
-	width: 100%;
+	float:left;
+	width: 75%;
 	height: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
-
 .swiper-slide {
-	background-size: cover;
-	background-position: center;
+	
+	background-size:100% 850px;
+	background-repeat:no-repeat;
 }
 
 .gallery-top {
 	height: 80%;
-	width: 100%;
+	width: 75%;
 }
 
 .gallery-thumbs {
@@ -165,3 +171,5 @@ img {
 .gallery-thumbs .swiper-slide-thumb-active {
 	opacity: 1;
 }
+
+/* -------------------Swiper end----------------------- */
