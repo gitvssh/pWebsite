@@ -72,6 +72,21 @@
 			</div>
 		</article>
 		<!-- 팀원3 -->
+		<article>
+			<div class="wrapimg">
+				<a href="crewpage03.html" class="crewimg"> <img class="img-icon"
+					alt=""
+					src="http://socialdev.co.kr/sdev/wp-content/uploads/2015/05/1463061562_golf.png">
+				</a>
+			</div>
+			<div class="infobox">
+				<h3>손현배</h3>
+				<p>Chief&nbsp;Designer</p>
+				<p>SOCIALDEV의 Chief Designer Charles는 영국 유수의 디자인 스쿨을 졸업하였으며 현재
+					홍콩 기반 웹디자이너로 활동하고 있습니다.</p>
+			</div>
+		</article>
+		<!-- 팀원 4 -->
 		<div class="floatclear"></div>
 	</section>
 	<div class="botimage"></div>

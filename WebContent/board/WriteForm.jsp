@@ -39,7 +39,7 @@ if(request.getParameter("num") != null){
 %>
 <body>
 	<center><h1>글쓰기</h1></center>
-		<form name="WriteForm" method="post" action="WritePro.jsp" onSubmit="return writrSave()">
+		<form name="WriteForm" method="post" action="Community.jsp?&flag=writepro" onSubmit="return writrSave()">
 			<input type="hidden" name="num" value="<%= num %>">
 			<input type="hidden" name="ref" value="<%= ref %>">
 			<input type="hidden" name="re_step" value="<%= re_step %>">
@@ -105,7 +105,7 @@ if(request.getParameter("num") != null){
 				<td colspan="2" align="center" >
 					<input type="submit" value="글쓰기">
 					<input type="reset" value="다시쓰기">
-					<input type="button" value="글목록" onclick="window.location='List.jsp'">
+					<input type="button" value="글목록" onclick="window.location='Community.jsp'">
 				</td>
 			</tr>
 				

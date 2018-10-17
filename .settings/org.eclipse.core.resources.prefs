@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/boardmysql=UTF-8
 encoding//src/boardmysql/BoardDAO.java=UTF-8
 encoding//src/tools/Sha256.java=UTF-8
+encoding/<project>=euc-kr
